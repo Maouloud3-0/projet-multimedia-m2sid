@@ -3,6 +3,9 @@ point3_transcription/data/
 *.wav
 *.mp3
 
+# Caches locaux (uv, modeles Hugging Face)
+.cache/
+
 # Python
 __pycache__/
 *.pyc
