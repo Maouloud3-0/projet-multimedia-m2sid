@@ -1,0 +1,20 @@
+Comparaison de 300 extraits communs
+
+configuration             extraits    parole    part  mots/extrait
+transcriptions_wav             300       203  67.7%          15.2
+transcriptions_voix            300       210  70.0%          15.1
+
+Extraits dont le texte change : 133 (44.3%)
+Desaccords sur la presence de parole : 31 (10.3%)
+Similarite moyenne des textes : 0.84
+
+Exemples de differences
+  00000_clip_006
+    transcriptions_wav : How many times did I breathe in clean air fragrant with lavender and take it for granted I don't give a fuck how many times
+    transcriptions_voix : How many times did I breathe in clean air, fragrant with lavender, and take it for granted? James, I don't give a fuck. How many t
+  00000_clip_062
+    transcriptions_wav : Let me ride you into safety. Don't let them fight you like that. Don't let them fight you like that.
+    transcriptions_voix : let me ride you in a safe don't let them fight you like that don't let them fight you
+  00007_clip_040
+    transcriptions_wav : Mia, you've got something special. Your dad had it, too, but...
+    transcriptions_voix : I mean, you've got something special. Your dad had it too, but...

@@ -66,11 +66,15 @@ def main():
         for i in parles
     ]
 
+    # On compare exactement le meme sous-ensemble d'extraits.
+    a_communs = {identifiant: a[identifiant] for identifiant in communs}
+    b_communs = {identifiant: b[identifiant] for identifiant in communs}
+
     lignes = []
     lignes.append(f"Comparaison de {len(communs)} extraits communs")
     lignes.append("")
     lignes.append(f"{'configuration':<24}{'extraits':>10}{'parole':>10}{'part':>8}{'mots/extrait':>14}")
-    for nom, dico in ((options.a, a), (options.b, b)):
+    for nom, dico in ((options.a, a_communs), (options.b, b_communs)):
         stats = statistiques(nom, dico)
         lignes.append(f"{stats['configuration']:<24}{stats['extraits']:>10}"
                       f"{stats['avec_parole']:>10}{stats['part_parole']:>7.1%}"
@@ -78,6 +82,11 @@ def main():
     lignes.append("")
     lignes.append(f"Extraits dont le texte change : {len(differents)} "
                   f"({len(differents) / len(communs):.1%})")
+
+    # Desaccords sur le fait qu'il y ait, ou non, des dialogues.
+    desaccords = sum(a[i]["a_parole"] != b[i]["a_parole"] for i in communs)
+    lignes.append(f"Desaccords sur la presence de parole : {desaccords} "
+                  f"({desaccords / len(communs):.1%})")
     if similarites:
         lignes.append(f"Similarite moyenne des textes : {sum(similarites) / len(similarites):.2f}")
     lignes.append("")

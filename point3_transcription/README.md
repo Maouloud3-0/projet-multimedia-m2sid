@@ -142,12 +142,35 @@ Remplir à la main 50 à 100 extraits dans
 python 06_evaluer_wer.py --csv resultats/transcriptions_wav.csv
 ```
 
-| Configuration | Traitement | Modèle | WER | Détection de parole |
+## Résultats obtenus
+
+### Transcription complète (configuration A, audio brut)
+
+| Mesure | Valeur |
+|---|---|
+| Extraits transcrits | 3 088 / 3 088 |
+| Extraits avec des dialogues | 2 119 (68,6 %) |
+| Mots par extrait (extraits parlés) | 14,9 |
+| Temps de calcul | 0,3 s par extrait sur RTX 5070 |
+
+### Comparaison audio brut / voix isolée (300 extraits tirés au hasard)
+
+| Configuration | Traitement | Parole détectée | Textes qui changent | Similarité |
 |---|---|---|---|---|
-| A | audio brut | whisper-small | à mesurer | à mesurer |
-| B | audio brut | large-v3-turbo | à mesurer | à mesurer |
-| C | Demucs | large-v3-turbo | à mesurer | à mesurer |
-| D | Demucs + VAD + filtrage | large-v3-turbo | à mesurer | à mesurer |
+| A | audio brut | 203 (67,7 %) | référence | — |
+| C | Demucs (voix isolée) | 210 (70,0 %) | 133 (44,3 %) | 0,84 |
+| B | passe-bande 300–3 400 Hz | 12 extraits testés : mêmes textes hors ponctuation | — | — |
+
+**Interprétation.** La séparation des voix fait légèrement augmenter la détection
+de parole (+2,3 points) et modifie 44 % des textes, mais sans référence humaine
+on ne peut pas dire lesquels sont meilleurs : Demucs corrige parfois une phrase
+et en invente parfois une autre. Le filtre fréquentiel manuel, lui, ne change
+pratiquement rien — la musique occupe la même bande que la voix.
+
+**Conséquence pour le projet.** La transcription de l'audio brut est retenue
+comme configuration de référence : elle est complète sur les 3 088 extraits et
+Demucs n'apporte pas de gain démontré. Le WER sur un échantillon annoté à la
+main reste à mesurer.
 
 ## Ce que contient le CSV — `resultats/transcriptions_voix.csv`
 

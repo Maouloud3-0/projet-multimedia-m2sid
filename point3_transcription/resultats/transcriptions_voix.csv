@@ -1,0 +1,301 @@
+video_id,film_id,partition,emotion,duree,langue,a_parole,ratio_parole,no_speech_prob,logprob_moyen,texte
+00000_clip_006,00000,test,contentment,7.38,en,1,0.907,0.0,-0.205,"How many times did I breathe in clean air, fragrant with lavender, and take it for granted? James, I don't give a fuck. How many times?"
+00000_clip_062,00000,test,anger,5.8,en,1,1.0,0.0,-0.384,let me ride you in a safe don't let them fight you like that don't let them fight you
+00002_clip_042,00002,train,anger,4.25,en,0,0.0,0.0,,
+00002_clip_070,00002,train,anger,4.34,en,0,0.0,0.0,,
+00004_clip_045,00004,train,fear,4.21,en,0,0.0,0.0,,
+00005_clip_013,00005,train,sadness,18.64,en,1,0.448,0.0,-0.27,"It's really selfish. You know, I'm not like a car that you can fix up. I'm never gonna run right, so I should be fair to you."
+00007_clip_040,00007,train,sadness,5.75,en,1,0.789,0.0,-0.425,"I mean, you've got something special. Your dad had it too, but..."
+00008_clip_019,00008,dev,fear,6.51,en,0,0.188,0.0,,
+00012_clip_020,00012,train,sadness,5.13,en,1,0.984,0.0,-0.186,"After tonight, it's quite clear you have no fucking clue what I'm capable of."
+00013_clip_001,00013,train,anger,5.92,en,1,0.867,0.0,-0.242,"You need to hear the truth, Bella. Understand all your options."
+00014_clip_005,00014,train,amusement,4.55,en,0,0.0,0.0,,
+00015_clip_003,00015,dev,contentment,20.1,en,1,0.417,0.0,-0.745,Softly nice Your ears are In twine Shadows are
+00015_clip_005,00015,dev,contentment,7.84,en,1,0.159,0.0,-0.355,Now
+00015_clip_007,00015,dev,contentment,9.51,en,1,0.237,0.0,-0.77,Pray this time.
+00019_clip_004,00019,test,fear,19.39,en,0,0.0,0.0,,
+00020_clip_016,00020,dev,anger,6.42,en,1,1.0,0.0,-0.245,"He's probably a big loser without that flashy costume. Oh, he's definitely not a loser."
+00021_clip_007,00021,train,sadness,5.75,en,0,0.0,0.0,,
+00022_clip_024,00022,test,amusement,7.84,en,1,0.246,0.0,-0.319,He's come to the finish post.
+00025_clip_005,00025,train,contentment,15.72,en,1,1.0,0.0,-0.107,"to the head and recording them in a diary to analyze what each drill hit feels like. All right, this is a very, very abnormal problem, and certainly the first we've had on the show. I think that immediately you should seek professional help and counseling, because using an electric drill on the human skull is something that, well, we really shouldn't do."
+00026_clip_008,00026,dev,contentment,26.56,en,1,0.798,0.0,-0.239,"Do me a favor, I want you to take these earrings and put them in mom's mahogany box. Now, put them in your backpack or something so don't lose them here. Could you just put them in the box, please, Grace? You've really gotten into the bad habit of asking a huge amount of questions lately. I gotta go, okay, pal?"
+00027_clip_018,00027,train,excitement,24.69,en,1,0.434,0.0,-0.217,"Say your name! Say it! Say it! Katie! Say it or you die! Kid, you want to point that toward the floor, okay? That's a cigarette."
+00027_clip_026,00027,train,sadness,15.51,en,1,0.132,0.0,-0.487,Motherfucker.
+00028_clip_001,00028,train,disgust,11.38,en,1,0.443,0.0,-0.221,"There are, but there's this blonde that's been following. Oh, forget it."
+00028_clip_016,00028,train,disgust,4.09,en,0,0.0,0.0,,
+00029_clip_013,00029,train,amusement,6.51,en,0,0.0,0.0,,
+00029_clip_020,00029,train,contentment,4.34,en,1,1.0,0.0,-0.354,"Yes. I know your brother. Oh, good for you."
+00030_clip_021,00030,test,awe,8.13,en,0,0.0,0.0,,
+00031_clip_016,00031,train,fear,4.46,en,0,0.0,0.0,,
+00031_clip_046,00031,train,fear,6.21,en,1,0.343,0.0,-0.917,"Oh, you okay?"
+00032_clip_017,00032,train,awe,5.75,en,1,1.0,0.0,-0.302,"Elizabeth Driscoll, out of here. No, no, I didn't take her from there. Her other body was in here. That's what I've been trying to explain."
+00032_clip_027,00032,train,anger,5.8,en,1,0.328,0.0,-0.32,Will Elizabeth be coming home?
+00033_clip_003,00033,train,excitement,7.55,en,1,0.968,0.0,-0.209,"Damn, that ain't natural doing that torture to yourself. What's the big deal about some stray hair? You be doing it to look all clean for your man, but it hurts."
+00035_clip_018,00035,train,anger,4.84,en,1,0.474,0.0,-0.369,Get him! Get him!
+00037_clip_017,00037,train,excitement,5.38,en,1,0.428,0.0,-0.324,Do I stutter bitch?
+00038_clip_004,00038,train,amusement,7.63,en,1,0.122,0.0,-0.823,No!
+00041_clip_003,00041,train,fear,4.13,en,0,0.0,0.0,,
+00042_clip_002,00042,test,disgust,6.67,en,1,0.71,0.0,-0.27,You look rather unwell. Perhaps you would rather stay here and keep Millicent to come for me.
+00045_clip_017,00045,train,anger,4.13,en,1,0.84,0.0,-0.377,What can you tell us about yesterday? About those two that...
+00045_clip_041,00045,train,awe,13.14,en,1,0.431,0.0,-0.974,I should have begun Black and southern and rich on Take the way
+00046_clip_006,00046,dev,excitement,6.01,en,1,0.843,0.0,-0.151,"You are a romantic, Catherine, and once more about to be married."
+00046_clip_012,00046,dev,anger,7.92,en,1,0.915,0.0,-0.285,"Ask him. I think these cold, objective discussions are aggressive. Excuse me."
+00046_clip_028,00046,dev,contentment,12.01,en,1,0.983,0.0,-0.204,"Had two little white front paws, and I was crazy after her. We left her at some friend's house, and she got squashed flat on a tortilla right outside their mobile home."
+00047_clip_026,00047,train,sadness,8.72,en,1,0.639,0.0,-0.358,Design. Does that mean if you figure out the design you can cheat death?
+00047_clip_027,00047,train,contentment,5.96,en,1,0.713,0.0,-0.244,"Alex, you've already done that by walking off the plane."
+00047_clip_038,00047,train,disgust,4.25,en,1,0.654,0.0,-0.367,And you don't even want to fuck with that man.
+00048_clip_006,00048,train,excitement,6.13,en,1,1.0,0.0,-0.78,"All right, all right."
+00049_clip_005,00049,train,anger,5.5,en,0,0.0,0.0,,
+00049_clip_036,00049,train,fear,13.72,en,0,0.0,0.0,,
+00050_clip_001,00050,train,fear,5.84,en,0,0.0,0.0,,
+00051_clip_013,00051,train,fear,4.84,en,1,0.843,0.0,-0.461,No! Shut up! Bloody hell! Let's go!
+00053_clip_007,00053,train,anger,5.13,en,1,0.28,0.0,-0.314,He's not even here!
+00053_clip_013,00053,train,awe,4.13,en,1,0.818,0.0,-0.41,"two minutes from our shore. What's it to be, Plushkin?"
+00053_clip_026,00053,train,awe,5.42,en,1,0.476,0.0,-0.22,"Sir, that'll shut down the entire planet."
+00053_clip_029,00053,train,disgust,4.38,en,1,0.893,0.0,-0.192,"Our technology, our way of life, our entire history."
+00055_clip_008,00055,train,fear,4.13,en,1,1.0,0.0,-0.786,"You were working for us, boys!"
+00057_clip_006,00057,train,contentment,7.84,en,1,0.561,0.0,-0.378,Mm-hmm. Susan Atwell was the woman I've been seeing.
+00059_clip_002,00059,test,anger,7.51,en,1,0.994,0.0,-0.327,"Cheat! Cheat! Wake up! What? Yo, I'm about to go find this puta while it's still early. What puta? Que puta? The fucking NDA guy!"
+00059_clip_018,00059,test,anger,4.84,en,1,0.225,0.0,-0.731,"Yo, what the f**k is-"
+00060_clip_013,00060,dev,fear,8.92,en,1,0.612,0.0,-0.174,"Dave's dead. I don't know who came out of that cellar, but it sure as shit wasn't Dave."
+00061_clip_021,00061,dev,fear,15.97,en,1,0.841,0.0,-0.24,"Little bird without a song Little bird, little bird, little bird, please fly, please go Little bird, little bird, and tell her song"
+00064_clip_012,00064,train,anger,9.3,en,1,0.848,0.0,-0.127,But this is what's going to happen to our sales after my new television program seeps into the public mind.
+00064_clip_020,00064,train,awe,5.0,en,1,0.978,0.0,-0.347,"Sounds great, Vince. Great, doesn't it, man?"
+00065_clip_013,00065,dev,excitement,4.8,en,1,1.0,0.0,-0.234,dad that was not an animal okay i know what it feels like when a man caresses my leg
+00069_clip_002,00069,test,sadness,28.9,en,0,0.0,0.0,,
+00075_clip_054,00075,train,anger,7.42,en,1,0.36,0.0,-0.819,"Yeah, yeah, I ain't gonna make it!"
+00076_clip_017,00076,train,excitement,4.25,en,1,0.301,0.0,-0.995,You
+00077_clip_014,00077,test,anger,4.21,en,1,1.0,0.0,-0.2,"This week could have been changed, could have been dyed a different color. Did you sell a similar model of a different color?"
+00078_clip_039,00078,train,fear,4.09,en,0,0.0,0.0,,
+00078_clip_053,00078,train,anger,9.59,fr,1,0.671,0.0,-0.674,"Lâche-y, je t'aime. Au coufou-n'âc. Au coufou-n'âc."
+00079_clip_011,00079,train,contentment,22.39,en,1,0.156,0.0,-0.307,I'm glad you're home. Promise me something.
+00080_clip_012,00080,train,sadness,5.8,en,1,0.923,0.0,-0.297,"Dad. Dad, it's all right. I'm here. I'm here. It's gonna be okay. Dad."
+00080_clip_023,00080,train,sadness,20.56,en,0,0.067,0.0,-0.288,"You're no good to me, Dad."
+00081_clip_005,00081,test,disgust,5.0,en,1,1.0,0.0,-0.241,little chat okay okay and we can do it the hard way or we can do it the easy way
+00081_clip_059,00081,test,excitement,4.38,en,1,0.281,0.0,-0.537,Explain it to you.
+00084_clip_006,00084,train,fear,6.96,en,1,0.138,0.0,-0.778,Thank you.
+00088_clip_010,00088,train,sadness,6.09,en,1,0.596,0.0,-0.384,About three seconds. How long have you been in prison?
+00091_clip_005,00091,train,awe,6.42,en,0,0.215,0.0,,
+00093_clip_025,00093,test,excitement,4.5,en,0,0.0,0.0,,
+00094_clip_024,00094,dev,anger,4.59,en,0,0.0,0.0,,
+00095_clip_005,00095,train,amusement,17.76,fr,1,0.6,0.0,-0.23,"Il a sorti le champagne, on se préparait à fêter la nouvelle. Ah oui, j'ai mon verre dans la main. Écoute, notre amour, Andréa, je vais te le passer. Papa ? Papa ? Non."
+00098_clip_013,00098,train,anger,4.5,en,1,0.566,0.0,-0.28,I love you a million red M&Ms.
+00099_clip_025,00099,train,sadness,5.71,en,1,0.185,0.0,-0.714,Seven.
+00103_clip_066,00103,train,anger,5.09,en,0,0.0,0.0,,
+00104_clip_008,00104,train,fear,6.96,en,0,0.0,0.0,,
+00104_clip_015,00104,train,amusement,5.25,en,1,0.641,0.0,-0.517,"Go there. Go there. Come on, Jesus."
+00105_clip_003,00105,train,awe,6.63,es,1,0.648,0.0,-0.193,Y después yo la vendo. Claro. Siempre y cuando ustedes dos vengan conmigo.
+00106_clip_005,00106,train,sadness,12.26,en,1,0.198,0.0,-0.576,What's up? Oh my god.
+00106_clip_010,00106,train,fear,18.52,en,1,0.213,0.0,-0.34,"Oh, man, this is going to be good."
+00107_clip_082,00107,train,anger,7.92,en,0,0.0,0.0,,
+00109_clip_004,00109,dev,excitement,11.22,en,1,1.0,0.0,-0.093,live here excuse me my mistake you think i have to depend on people like joe listen pal i've been on planes with people who took me out to dinner and then i let them take me back to their hotels
+00109_clip_008,00109,dev,disgust,5.25,en,1,0.977,0.0,-0.311,"Good. Go home. Goodbye, goodnight, get fucked."
+00109_clip_009,00109,dev,contentment,20.52,en,1,0.816,0.0,-0.234,"Call me a schmuck, but I love the little bitch. It's the coke talking, guys. You wouldn't know her when she's straight. I gotta keep away from the coke. I gotta keep away from Michael. Ah, life, a continuous struggle, huh? Good night, y'all. Take care. Thank you."
+00110_clip_024,00110,test,excitement,4.5,en,1,0.789,0.0,-0.532,Mission accomplished? Fruit punch.
+00111_clip_023,00111,train,amusement,7.05,en,1,0.683,0.0,-0.471,"We've doubted. I think we're stuck with it, aren't we? Yes."
+00111_clip_034,00111,train,contentment,5.55,en,0,0.0,0.0,,
+00113_clip_008,00113,train,anger,21.85,en,1,0.126,0.0,-0.118,Been a long time since I've seen my own blood.
+00113_clip_025,00113,train,anger,4.96,en,1,0.119,0.0,-0.794,Thank you.
+00113_clip_035,00113,train,anger,4.21,en,0,0.0,0.0,,
+00114_clip_007,00114,train,excitement,10.72,en,1,0.626,0.0,-0.299,"Well done, Paul. Thank you. Thank you. Any questions? No. Not for me. Yes."
+00115_clip_006,00115,train,excitement,6.96,en,1,1.0,0.0,-0.284,"Everybody, this is Lynn. Lynn is one of the baddest hairstylists to ever set foot out of Augusta Blu-ray."
+00115_clip_007,00115,train,excitement,4.09,en,1,1.0,0.0,-0.445,"Blue Ridge, Georgia. She got mad skills. The girl is talented."
+00117_clip_001,00117,dev,excitement,4.42,en,1,0.729,0.0,-0.46,"That's nice, man. Hey, guys."
+00117_clip_031,00117,dev,disgust,9.01,en,1,0.508,0.0,-0.329,HBO's in the ring after the fight. We are doing that interview.
+00118_clip_014,00118,train,excitement,7.63,en,1,0.769,0.0,-0.261,"When the wine hit it, it went right back into solution, no trace."
+00118_clip_028,00118,train,contentment,4.09,en,1,0.734,0.0,-0.353,Hit when I want. Just like you said.
+00121_clip_002,00121,train,amusement,25.98,en,1,0.97,0.0,-0.451,"Hey, Kropotkin, I'm a little old, old friend, my family, my Korean. How are you? It's nice to meet you. Please, no Russian, I'm spying. Hey, old buddy, I thought they cycled you back to Eastern Europe. They did, but when you guys hired Dr. Schaefer, they decided I was the one to grab him, so here I am. Say, how's Pierre?"
+00122_clip_010,00122,train,awe,5.34,en,1,0.713,0.0,-0.413,"I would say so, why? What business? How'd you a-diggin'?"
+00122_clip_014,00122,train,awe,11.38,en,1,0.81,0.0,-0.336,"For herpes? Aye. What, like, for your head? Aye. Philip Dugan with the cows? Aye, him. Why?"
+00123_clip_013,00123,train,contentment,9.01,en,1,1.0,0.0,-0.145,huh now don't let this throw you okay looks you know looks can be deceiving we have to think potential here think potential all right you see all the stuff
+00123_clip_028,00123,train,sadness,6.21,en,1,0.472,0.0,-0.51,Your name on lease next to mine.
+00124_clip_014,00124,train,awe,5.38,en,0,0.0,0.0,,
+00124_clip_028,00124,train,disgust,10.26,en,1,0.522,0.0,-0.358,you saw me take the money out you once like trying to get something done around here
+00125_clip_024,00125,train,anger,5.59,en,1,0.813,0.0,-0.221,"How dare you say that to her? You don't know her, Quentin."
+00129_clip_019,00129,test,disgust,4.96,en,1,0.665,0.0,-0.771,Oh
+00129_clip_028,00129,test,disgust,4.0,en,1,0.903,0.0,-0.289,I-U-T-S-I-F
+00130_clip_004,00130,train,awe,4.0,en,1,0.623,0.0,-0.367,Hast thou forsaken me?
+00130_clip_006,00130,train,sadness,8.42,en,0,0.0,0.0,,
+00130_clip_007,00130,train,sadness,4.92,en,0,0.0,0.0,,
+00130_clip_017,00130,train,awe,5.09,en,0,0.0,0.0,,
+00130_clip_018,00130,train,sadness,7.96,en,0,0.0,0.0,,
+00131_clip_016,00131,dev,anger,5.38,en,1,0.761,0.0,-0.389,"Arthur, we need to restrain him."
+00131_clip_094,00131,dev,sadness,8.88,en,1,0.137,0.0,-0.207,Please
+00134_clip_001,00134,train,anger,24.73,en,1,0.995,0.0,-0.322,"I'm done being angry like this, I'm done having you drunk like this, I am done. Don't close that door. I'm closing the door. Don't cl- Don't talk like that. Mimi. Hey, don't talk to me. You okay? Mimi, you know what, we're gonna take a little minute. Where's the good thing is that getting? You know what, this is why I don't talk to you. This is why- You go from here to here. No time at all. This is why you talk to me, because I'm here. This is the only reason you're talking to me. You fucking-"
+00135_clip_029,00135,train,excitement,6.17,en,1,0.833,0.0,-0.222,"Sorry, I'll stop you live here now. It's not the worst kind of just like"
+00135_clip_030,00135,train,excitement,7.05,en,1,0.454,0.0,-0.531,Anywhere else? Not anymore.
+00135_clip_035,00135,train,disgust,7.01,en,0,0.0,0.0,,
+00140_clip_007,00140,train,awe,8.01,en,0,0.0,0.0,,
+00141_clip_012,00141,dev,fear,4.34,en,1,0.866,0.0,-0.478,But I feel suffocated sometimes.
+00141_clip_014,00141,dev,excitement,14.55,en,1,0.364,0.0,-0.668,What? What's going on? What? Okay. Whoa!
+00143_clip_028,00143,train,sadness,12.8,en,0,0.038,0.0,-0.514,Sally.
+00148_clip_002,00148,train,excitement,10.3,en,1,0.619,0.0,-0.246,"Thanks a million. Say a little missus for me, will you? Yes, sir. All right. Here's the first of the day, fellas."
+00150_clip_004,00150,train,fear,8.38,en,1,0.588,0.0,-0.356,"George! George, go get Dr. Mandel!"
+00151_clip_012,00151,train,anger,8.63,en,1,1.0,0.0,-0.208,"Really can you help me because I've run out of ways to say congrats. Okay, I got good job Well done way to go. That's it"
+00152_clip_006,00152,dev,anger,6.13,en,1,0.953,0.0,-0.207,what kind of a man betrays his flesh and blood brethren for alien metal get this guy out of my
+00157_clip_030,00157,test,sadness,7.92,en,1,0.339,0.0,-0.43,So I'm... I'm so sorry.
+00157_clip_031,00157,test,amusement,8.67,en,1,0.745,0.0,-0.172,"And while I'm at it, there's one other thing to say as well, because I've been a fool twice over."
+00160_clip_005,00160,train,contentment,20.1,en,1,0.99,0.0,-0.226,"You know, like a teenage guy. Well, how old would he be? Like 18. Why, I seriously doubt it. You see, the female vampire needs the blood of a virgin. And an 18-year-old boy would hardly be a virgin now, would he? Well, just hypothetically, what if he was a virgin? Well, then I think..."
+00164_clip_013,00164,dev,amusement,5.3,en,0,0.0,0.0,,
+00164_clip_050,00164,dev,anger,5.55,en,0,0.0,0.0,,
+00165_clip_028,00165,train,awe,6.34,en,0,0.0,0.0,,
+00166_clip_002,00166,train,disgust,6.51,en,0,0.0,0.0,,
+00167_clip_014,00167,train,excitement,11.43,en,0,0.0,0.0,,
+00175_clip_007,00175,train,excitement,12.97,en,0,0.0,0.0,,
+00175_clip_057,00175,train,anger,4.84,en,0,0.0,0.0,,
+00177_clip_034,00177,train,fear,17.85,en,0,0.077,0.0,-0.791,Yeah!
+00179_clip_023,00179,test,disgust,4.25,en,1,0.774,0.0,-0.494,say that? What the fuck was that?
+00179_clip_026,00179,test,fear,6.42,en,1,1.0,0.0,-0.26,you know what i'll give you the first punch huh go ahead go ahead hit me
+00180_clip_002,00180,train,amusement,7.38,en,1,1.0,0.0,-0.213,"That's what the man said, Sam. The trip will probably be boring routine."
+00181_clip_002,00181,test,awe,5.13,en,0,0.0,0.0,,
+00184_clip_001,00184,dev,awe,14.1,en,0,0.071,0.0,-0.875,"All right, please."
+00185_clip_018,00185,train,amusement,17.68,fr,1,0.706,0.0,-0.337,"Tu vois, t'inquiète pas, ça ira très bien ma coutoune, tu sais. C'est plus mal encore, t'es rien du tout. Tu t'es fait mal avec tes petits poings. Non, non, allez, allez, t'empêche-toi. Tu m'aimes toujours, alors?"
+00186_clip_003,00186,test,fear,6.38,en,1,0.501,0.0,-0.842,Oh
+00188_clip_001,00188,dev,sadness,10.51,en,0,0.0,0.0,,
+00188_clip_021,00188,dev,fear,10.63,en,0,0.085,0.0,-0.93,You
+00188_clip_023,00188,dev,fear,16.22,en,0,0.0,0.0,,
+00190_clip_002,00190,train,fear,5.34,en,0,0.0,0.0,,
+00192_clip_006,00192,train,amusement,4.46,en,1,0.932,0.0,-0.284,"I told him I want to quit, and he's like, you quit me, girl. I'm going to jack you up."
+00195_clip_021,00195,train,amusement,7.09,en,1,0.285,0.0,-0.082,It's a jungle in here
+00197_clip_013,00197,train,anger,7.63,en,1,0.968,0.0,-0.424,good shape oh boss man why is mari even friends with ali she only gives a about herself anyways
+00197_clip_017,00197,train,amusement,6.26,en,1,0.652,0.0,-0.685,"What a car play on, right? Mm-hmm. Uh-huh."
+00199_clip_019,00199,test,excitement,7.34,en,1,0.93,0.0,-0.665,"Be free, set me free Finest years I ever"
+00199_clip_044,00199,test,excitement,5.13,ur,1,0.864,0.0,-0.421,ورطا ورطا
+00200_clip_006,00200,train,amusement,4.5,en,0,0.0,0.0,,
+00201_clip_015,00201,train,fear,4.71,en,0,0.401,0.0,,
+00201_clip_020,00201,train,fear,5.21,en,0,0.0,0.0,,
+00204_clip_004,00204,train,awe,5.96,en,0,0.0,0.0,,
+00208_clip_010,00208,train,disgust,7.09,en,1,0.555,0.0,-0.453,"Nothing is, all you're concerned about is dying."
+00209_clip_014,00209,train,awe,5.09,en,1,0.401,0.0,-0.42,"Peter, when the inspector arrives."
+00209_clip_018,00209,train,awe,5.21,en,1,0.693,0.0,-0.669,Do you think Stella helped him to escape? I'm not doing it.
+00210_clip_016,00210,train,sadness,6.84,en,1,0.887,0.0,-0.344,"Do you want to go for a walk later? Um, I can't. What? I can't."
+00210_clip_024,00210,train,disgust,5.05,en,1,1.0,0.0,-0.179,"It's going great. It's going great. I'm on the mend. You know, I just got some pins in my legs."
+00210_clip_030,00210,train,anger,5.5,en,1,1.0,0.0,-0.133,Violent fall kind of pinball down hit a lot of railings broke a lot of shit. I didn't
+00211_clip_027,00211,train,contentment,6.21,en,1,0.259,0.0,-0.586,When you're home.
+00212_clip_017,00212,train,anger,7.84,en,0,0.0,0.0,,
+00213_clip_014,00213,dev,contentment,5.84,en,0,0.0,0.0,,
+00217_clip_033,00217,test,fear,12.93,en,0,0.035,0.0,,
+00219_clip_016,00219,train,amusement,7.71,en,1,0.846,0.0,-0.325,It's raining men. You like the gamble? Take a chance on the regular guy robe.
+00222_clip_008,00222,train,fear,6.42,en,1,0.563,0.0,-0.342,The girl the hell with radiation let's go
+00222_clip_011,00222,train,awe,6.67,en,0,0.0,0.0,,
+00224_clip_013,00224,train,anger,8.84,en,1,0.209,0.0,-0.732,Where are we?
+00226_clip_004,00226,dev,sadness,4.63,en,1,0.684,0.0,-0.187,This used to be a hell of a good country.
+00226_clip_005,00226,dev,sadness,4.25,en,1,0.623,0.0,-0.361,I can't understand what's going on with it.
+00228_clip_010,00228,dev,amusement,5.55,en,0,0.0,0.0,,
+00228_clip_012,00228,dev,amusement,7.92,en,0,0.0,0.0,,
+00230_clip_003,00230,train,sadness,10.34,en,1,0.7,0.0,-0.205,"Like, you never asked if there was more to my story at college. You never asked if I was okay."
+00230_clip_004,00230,train,fear,6.92,en,1,0.423,0.0,-0.184,You were too focused on how it affected you.
+00231_clip_024,00231,train,disgust,12.55,en,1,0.646,0.0,-0.492,It's insane. I'll shoot your gob. I'll shoot you! I'll shoot you! I'll shoot you! I'll shoot you! I'll shoot you! You must be stubborn!
+00232_clip_002,00232,train,contentment,10.68,en,1,0.423,0.0,-0.239,"Yeah, but look to me like you don't really need to be smoking"
+00235_clip_002,00235,train,fear,4.38,en,1,0.9,0.0,-0.742,"Nothing symbolizes that here, more than this one."
+00235_clip_013,00235,train,excitement,8.42,en,1,1.0,0.0,-0.26,"Just got here from New York. I'm Tanya. Oh, my God. It's so nice to have another woman in the house. I love that lippy color. What is that?"
+00235_clip_026,00235,train,excitement,6.46,en,1,0.933,0.0,-0.536,"Here, you're a nine. Borderline ten. It's called cardboard kit."
+00238_clip_020,00238,train,disgust,15.3,en,0,0.0,0.0,,
+00240_clip_034,00240,train,anger,10.13,en,1,0.965,0.0,-0.189,"Hey, calm down. Leave me alone. Can I just explain myself, please? I didn't want Nikki to think that I was associated with that kind of sexual behavior because I've never done anything like that, okay?"
+00240_clip_035,00240,train,sadness,5.55,en,1,1.0,0.0,-0.103,"You may not have experienced the shit that I did, but you loved hearing about it, didn't you?"
+00240_clip_037,00240,train,anger,13.72,en,1,1.0,0.0,-0.254,"You are afraid to live. You're a hypocrite. You're a conformist. You're a liar. I opened up to you, and you've judged me. You're an asshole. You're an asshole. Get off me! Get off! You're harassing me!"
+00241_clip_020,00241,train,disgust,4.13,en,1,1.0,0.0,-0.368,"Sorry about that. I didn't assume you were going to come to a full stop in the middle of a highway. Oh, I'm on my back."
+00243_clip_037,00243,dev,awe,10.22,en,1,0.803,0.0,-0.207,"You ever thought about how precious a life is, how difficult it is to create, how loosely and easily it has been for you?"
+00246_clip_013,00246,train,contentment,6.26,en,1,0.721,0.0,-0.321,"And here I sit, sucking on popsicles."
+00247_clip_007,00247,train,excitement,14.51,en,1,0.314,0.0,-0.439,Get a move on! Go! Something bad happened to the phone! What?
+00252_clip_008,00252,train,contentment,15.89,en,1,0.839,0.0,-0.322,"Well, why not? I, dear Mary, got you all, all bollocksed up. Trying to be respectable. You was born the hell out of all of us."
+00254_clip_001,00254,train,anger,15.68,en,1,0.94,0.0,-0.426,"You've got film in that camera? Aye. You load it? Yeah. Oh, good morning to you."
+00254_clip_010,00254,train,contentment,4.84,en,1,0.884,0.0,-0.327,"Lovely. That's a real beauty. Now, let's get into the close-up. Lick your lips."
+00256_clip_017,00256,test,sadness,6.09,en,0,0.0,0.0,,
+00258_clip_028,00258,train,anger,5.42,en,1,0.994,0.0,-0.288,I exist if you want to go on a trip with a memory then be my guest
+00264_clip_025,00264,train,disgust,16.06,fr,1,0.956,0.0,-0.272,"La buvenne ! Pardon. Pardon, chère madame. Bonjour, bonjour. Oui, je plaisante. Je plaisante. Vous savez, je l'aime déjà, cette petite. Oh, elle est si mignonne. Eh ben, on m'embrasse. On embrasse maman, mamie."
+00265_clip_006,00265,train,anger,4.71,en,1,0.284,0.0,-0.53,Now you try it.
+00267_clip_016,00267,train,disgust,4.05,en,0,0.0,0.0,,
+00267_clip_028,00267,train,fear,6.8,en,0,0.0,0.0,,
+00268_clip_007,00268,train,contentment,7.84,en,1,1.0,0.0,-0.328,"Dolly, it's so good. Oh, it's so good. You know, I just, I hate to be a pain, darling."
+00269_clip_009,00269,train,anger,4.13,en,1,1.0,0.0,-0.266,"No, no, no, we can't do it in my bed. I sleep with my brother and he's a..."
+00270_clip_004,00270,train,fear,4.38,en,1,1.0,0.0,-0.287,"Fallen Angel, Fallen Angel, Guardian is down. I repeat, Guardian is down."
+00270_clip_060,00270,train,sadness,11.13,en,0,0.0,0.0,,
+00271_clip_001,00271,train,awe,5.67,en,0,0.0,0.0,,
+00271_clip_010,00271,train,fear,4.13,en,0,0.0,0.0,,
+00271_clip_055,00271,train,fear,10.43,en,0,0.0,0.0,,
+00273_clip_036,00273,train,anger,8.8,en,1,0.995,0.0,-0.352,"Um, this is Joe. And, yes, and Joe and your Aunt Eleanor are engaged. What? Oh, my God. Mom!"
+00274_clip_003,00274,test,anger,5.34,en,1,0.967,0.0,-0.272,presidency used to be the the loneliest job in the world now even he has someone to talk to he can talk to me
+00277_clip_003,00277,train,disgust,7.63,fr,1,0.627,0.0,-0.319,"Oh, j'ai une faim. T'en fais une tête, toi, ce matin. Qu'est-ce que tu as?"
+00277_clip_009,00277,train,awe,6.34,fr,1,0.772,0.0,-0.143,Une espèce de fille qu'il a rencontrée à l'université. Ça devait arriver.
+00278_clip_042,00278,train,fear,4.63,en,1,0.658,0.0,-0.399,"August, you have to come with me. Don't!"
+00278_clip_081,00278,train,excitement,4.96,en,0,0.0,0.0,,
+00279_clip_006,00279,train,anger,13.8,en,1,0.239,0.0,-0.25,"You tell him. I won, didn't I? You lost."
+00280_clip_007,00280,dev,contentment,12.97,en,1,0.963,0.0,-0.264,"Then, there was this shirop of this woman from a foot comfort service I was having it off with. She used to cut me corns handsome, she did. Blimey, I never had me feet in such lovely condition. I was hopping about like a little fairy."
+00282_clip_016,00282,train,excitement,7.84,en,1,0.661,0.0,-0.564,My actions have been inexcusable. Scott! Scott!
+00282_clip_018,00282,train,anger,17.35,en,1,0.682,0.0,-0.228,"This is the hardest thing I've ever had to do in my life, but I swear, I'll do everything I can to help you out. Everything. I'll get you the best lawyers. David? He doesn't have a shred of proof."
+00285_clip_001,00285,train,sadness,25.02,en,1,0.808,0.0,-0.12,"Almighty God in heaven, who sees and knows all the sinful acts that offend him on this earth, the swift and powerful blade of justice lays open the serpent of evil and leaves its putrid flesh to rot under the sun of heaven and sends its soul to burn forever in hell's fire. Accept the toil of this serpent as atonement for his sins and grant him entrance into the kingdom of heaven and everlasting life at the foot of the almighty throne. Amen."
+00286_clip_006,00286,dev,awe,8.42,en,1,0.695,0.0,-0.307,Don't remember August 4th and I think about Anne Frank
+00288_clip_011,00288,dev,sadness,17.47,en,1,0.604,0.0,-0.337,"Oh, yes. Okay, then. I promise. Did I do that? It was nothing. I'm sorry. I didn't mean to hurt you."
+00288_clip_016,00288,dev,sadness,21.39,en,1,0.114,0.0,-0.343,and go right now.
+00292_clip_013,00292,train,fear,4.8,en,0,0.0,0.0,,
+00293_clip_001,00293,train,sadness,17.68,en,1,0.65,0.0,-0.192,Fifteen hundred bucks in two days. That's what I call a great weekend. I wish that ski season lasted all year. That was okay. What's with you?
+00295_clip_022,00295,train,amusement,9.17,en,1,0.867,0.0,-0.279,"He can make some noise in the middleweight division, don't you think? All right, time, boy. He can learn to be a switch hitter."
+00295_clip_027,00295,train,contentment,7.38,en,1,0.952,0.0,-0.423,boxing shape right felix yeah your body's strong your mind gonna need a whole lot of discipline
+00296_clip_006,00296,dev,fear,4.13,en,1,0.787,0.0,-0.396,I forgot my checkbook. Oh.
+00296_clip_022,00296,dev,sadness,5.09,en,1,0.346,0.0,-0.42,Are you all right?
+00299_clip_039,00299,test,anger,26.69,en,0,0.0,0.0,,
+00299_clip_043,00299,test,fear,5.25,en,0,0.0,0.0,,
+00301_clip_017,00301,train,anger,7.05,en,1,0.176,0.0,-0.589,You are weak.
+00302_clip_014,00302,dev,anger,5.21,en,0,0.0,0.0,,
+00303_clip_003,00303,train,anger,5.25,en,1,0.991,0.0,-0.27,"I'm going to try and distract him. When I give you the word, you ride away. No problem."
+00304_clip_006,00304,train,disgust,17.76,en,1,0.531,0.0,-0.401,"Had this shit on the Bible, about living in a violent, a violent world. Showed all these foreign places, foreigners living on."
+00306_clip_004,00306,test,contentment,21.68,en,1,0.187,0.0,-0.52,"Alright, girl. Downstairs. Come on. Downstairs."
+00306_clip_005,00306,test,disgust,8.38,en,0,0.0,0.0,,
+00310_clip_058,00310,train,disgust,4.34,en,1,0.855,0.0,-0.089,There's a killer out there patterning his murders after the original movie
+00316_clip_010,00316,train,amusement,5.59,en,1,0.997,0.0,-0.131,because it will be in and powered by your own brain.
+00317_clip_027,00317,test,anger,4.63,en,1,1.0,0.0,-0.375,"Objection, your honor. Shut up, Freddy. She's allowing it. She specificated a man with..."
+00319_clip_014,00319,train,contentment,10.51,en,1,0.496,0.0,-0.482,"Child of love, child of love"
+00321_clip_005,00321,train,excitement,6.92,en,0,0.0,0.0,,
+00322_clip_048,00322,dev,fear,5.71,en,0,0.0,0.0,,
+00323_clip_002,00323,train,excitement,10.55,en,0,0.0,0.0,,
+00324_clip_043,00324,dev,anger,6.67,en,1,0.885,0.0,-0.281,Master. We knew it would be like this. This is the way. Do it.
+00324_clip_048,00324,dev,sadness,16.64,en,1,0.326,0.0,-0.437,"Judas, help. Stay with me. Don't leave me."
+00327_clip_001,00327,train,contentment,5.92,en,1,0.637,0.0,-0.383,This plum is too ripe. Sorry.
+00327_clip_005,00327,train,contentment,8.05,en,1,0.93,0.0,-0.374,"What at night seems oh so scenic, may be scenic by today."
+00328_clip_003,00328,train,anger,4.17,en,1,1.0,0.0,-0.24,"Because without me, kid, those sniffs will put you in a room where you will fuck your uncle in the..."
+00329_clip_018,00329,train,excitement,6.17,en,1,1.0,0.0,-0.218,"Is this for me? Um, yes, ma'am. Oh, my gosh. Look at him. Prepared. I love that. I'm not even going to count it. You know what?"
+00331_clip_001,00331,train,awe,10.34,fa,1,0.474,0.0,-0.307,نفر بر، میلو پرشما، فرشت شما
+00332_clip_007,00332,train,amusement,5.63,en,0,0.0,0.0,,
+00334_clip_011,00334,train,excitement,8.84,en,1,0.48,0.0,-0.537,"Right now, take a ride in one of those tuckered cars, they don't exist!"
+00334_clip_017,00334,train,excitement,6.01,en,1,0.522,0.0,-0.551,"Thank you, sir."
+00335_clip_026,00335,test,anger,5.63,en,1,0.491,0.0,-0.484,"Yes, that's him he had this"
+00337_clip_004,00337,train,disgust,5.09,en,1,1.0,0.0,-0.203,"Look, we'll go to Randolph in the morning and we'll make a motion for a continuance 24 hours."
+00337_clip_016,00337,train,anger,4.84,en,1,1.0,0.0,-0.231,You didn't want the transfer order. You wanted to see Jessup's reaction when you asked for the transfer order.
+00337_clip_028,00337,train,anger,9.8,en,1,1.0,0.0,-0.357,"Exotic Fort Leavenworth, and for defense counsel, Kathy. That's right. It's a court-martial. Yes, Johnny, after falsely accusing..."
+00341_clip_009,00341,train,disgust,4.3,en,1,1.0,0.0,-0.2,"What are you doing? Trust me, divide and conquer. We separate the sins from the eye, and he's just an old man."
+00341_clip_019,00341,train,disgust,5.5,en,1,0.357,0.0,-0.579,"Here, take it, it's okay."
+00342_clip_014,00342,dev,contentment,18.68,en,0,0.0,0.0,,
+00343_clip_008,00343,train,awe,5.63,en,1,0.781,0.0,-0.315,"You know, a lot of people come to Vegas to lose, I didn't."
+00344_clip_020,00344,train,sadness,16.81,en,0,0.0,0.0,,
+00345_clip_021,00345,dev,sadness,11.72,en,1,0.303,0.0,-0.133,"You're living alone, and I'm living with somebody I don't even know."
+00345_clip_023,00345,dev,disgust,8.13,en,1,0.729,0.0,-0.122,right? You have no idea what it is. You can't. You're not paying enough attention.
+00346_clip_040,00346,train,anger,8.67,en,0,0.0,0.0,,
+00346_clip_083,00346,train,fear,5.34,en,0,0.0,0.0,,
+00347_clip_007,00347,train,amusement,4.05,en,0,0.416,0.0,,
+00348_clip_029,00348,train,disgust,4.8,en,1,0.716,0.0,-0.498,"Hello, hello. Look what got left behind."
+00349_clip_024,00349,train,excitement,8.22,en,1,0.537,0.0,-0.138,I like the way he touches his lower lip when he's feeling vulnerable.
+00354_clip_038,00354,train,awe,5.38,en,0,0.0,0.0,,
+00355_clip_051,00355,train,anger,9.97,en,1,0.853,0.0,-0.246,"He gave me advice on how to get a girl, and it worked. When? When he locked me in the bathroom with the lusty sea hag. What are you talking about?"
+00355_clip_061,00355,train,anger,6.42,en,1,0.905,0.0,-0.366,Dad! He came to the sweat lodge and asked for your hand in marriage. Then he burned it down.
+00357_clip_007,00357,train,sadness,7.26,en,0,0.0,0.0,,
+00358_clip_007,00358,dev,contentment,5.34,en,1,0.737,0.0,-0.51,Couldn't sleep. Just thinking.
+00360_clip_007,00360,dev,disgust,6.71,en,1,0.919,0.0,-0.373,by date? There was no mistake. You have what we refer to as lazy swimmers.
+00362_clip_007,00362,train,contentment,4.71,en,0,0.0,0.0,,
+00362_clip_029,00362,train,amusement,6.34,en,1,0.886,0.0,-0.641,talking on me and you talking on me
+00363_clip_020,00363,train,excitement,4.21,en,1,0.897,0.0,-0.166,"Do you know that unless you're willing to use the R rating, you can only say the F word once?"
+00364_clip_017,00364,dev,fear,9.13,en,0,0.0,0.0,,
+00365_clip_005,00365,train,anger,19.06,en,1,0.959,0.0,-0.126,"One man may seem incompetent, another not makes sense, while others look like quite a waste of company expense. They need a brother's leadership, so please don't do them in. Remember, mediocrity is not a mortal sin."
+00365_clip_012,00365,train,amusement,11.63,en,0,0.0,0.0,,
+00367_clip_014,00367,test,excitement,5.42,en,1,1.0,0.0,-0.426,"It really hurts so good. Virgin people's daughter, Grace? Yeah, a little chocolate drama."
+00367_clip_032,00367,test,fear,6.26,en,1,0.967,0.0,-0.183,"You have to ease her into it, Virgil. Let's just keep this between me and you."
+00367_clip_036,00367,test,fear,11.34,en,0,0.0,0.0,,
+00368_clip_007,00368,test,awe,5.09,en,1,1.0,0.0,-0.511,shut the experiment down and place the device at a level 13 lockdown where...
+00369_clip_005,00369,train,awe,9.09,es,1,0.447,0.0,-0.751,"Bueno, un asunto en el segundo."
+00370_clip_002,00370,test,awe,4.63,en,1,0.67,0.0,-0.298,Here we go. Mr Carson leave this to me
+00371_clip_012,00371,dev,amusement,7.21,en,0,0.0,0.0,,
+00371_clip_017,00371,dev,amusement,11.43,en,0,0.0,0.0,,
+00373_clip_001,00373,train,contentment,9.97,en,1,0.116,0.0,-0.415,What is it?
+00374_clip_002,00374,train,sadness,13.09,en,0,0.0,0.0,,
+00377_clip_027,00377,test,anger,6.17,en,1,1.0,0.0,-0.276,"Well, say you're beating an old guy. You lose, say a thumb in the eye. You're beating the joke of the decade. You all know that."
+00378_clip_019,00378,dev,anger,4.71,en,1,0.528,0.0,-0.181,"Did you write this composition, McCord?"
