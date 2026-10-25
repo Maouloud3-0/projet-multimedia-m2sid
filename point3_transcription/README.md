@@ -32,7 +32,9 @@ MP3 44,1 kHz stéréo
 | [02_separer_voix.py](02_separer_voix.py) | Demucs : voix conservée, musique et bruits écartés | `data/voix/` |
 | [03_transcrire.py](03_transcrire.py) | Whisper + VAD + filtrage des segments douteux | `data/transcriptions/` |
 | [04_construire_csv.py](04_construire_csv.py) | Assemblage avec émotion et ensemble (train/dev/test) | `resultats/transcriptions.csv` |
-| [05_evaluer_wer.py](05_evaluer_wer.py) | Taux d'erreur sur les mots | affichage |
+| [05_comparer_configurations.py](05_comparer_configurations.py) | Compare deux configurations sans référence | `resultats/comparaison_*.txt` |
+| [06_evaluer_wer.py](06_evaluer_wer.py) | Taux d'erreur sur les mots (référence manuelle) | affichage |
+| [telecharger_modele.py](telecharger_modele.py) | Télécharge un modèle Whisper sans passer par `huggingface_hub` | `.cache/` |
 
 Les paramètres se règlent dans un seul fichier : [config.py](config.py).
 
@@ -53,14 +55,36 @@ Sur une carte graphique récente (RTX 50xx), installer PyTorch pour CUDA 12.8 :
 pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 
+### Dépannage Windows
+
+**`Library cublas64_12.dll is not found or cannot be loaded`**
+CTranslate2 (le moteur de faster-whisper) a besoin de cuBLAS et cuDNN, que
+PyTorch installe pour lui-même sans les rendre visibles. On copie les
+bibliothèques dans le dossier de CTranslate2 :
+
+```powershell
+$torch = ".venv\Lib\site-packages\torch\lib"
+$ct2   = ".venv\Lib\site-packages\ctranslate2"
+Copy-Item "$torch\cublas64_12.dll","$torch\cublasLt64_12.dll","$torch\cudnn*64_9.dll","$torch\cudart*.dll" $ct2 -Force
+```
+
+**Modèle déjà téléchargé ailleurs**
+Si les poids de Whisper sont déjà sur le disque, on évite un nouveau
+téléchargement de 1,5 Go :
+
+```powershell
+$env:WHISPER_MODELE = "C:\chemin\vers\whisper-large-v3-turbo"
+```
+
 ## Utilisation
 
 ```bash
-python 01_convertir_audio.py          # ~5 min
-python 02_separer_voix.py             # ~30 min sur carte graphique
-python 03_transcrire.py               # ~20 min sur carte graphique
-python 04_construire_csv.py
-python 05_evaluer_wer.py
+python 01_convertir_audio.py                   # ~5 min
+python 02_separer_voix.py                      # ~45 min sur carte graphique
+python 03_transcrire.py                        # ~20 min sur carte graphique
+python 04_construire_csv.py --source voix
+python 05_comparer_configurations.py
+python 06_evaluer_wer.py
 ```
 
 Chaque étape saute les extraits déjà traités : on peut interrompre et relancer.
@@ -71,17 +95,40 @@ Pour un essai rapide sur 20 extraits :
 python 03_transcrire.py --limite 20
 ```
 
+## Choix techniques et justification
+
+| Choix | Pourquoi |
+|---|---|
+| **Whisper pré-entraîné** plutôt qu'un modèle entraîné par nos soins | Entraîner un système de reconnaissance de la parole demande des milliers d'heures de parole **déjà transcrite**. Le corpus en contient environ 4 heures et **aucune transcription de référence** : il n'y a rien pour apprendre. C'est donc hors de portée d'un projet de cette taille. |
+| **`large-v3-turbo`** | Meilleur compromis qualité / vitesse : environ 809 M paramètres, moins de 3 Go de mémoire, robuste au bruit et au multilingue. `small` sert de point de comparaison, `large-v3` de borne supérieure. |
+| **Demucs (`htdemucs`)** | La musique et les effets sonores d'un film masquent les dialogues. Demucs isole la piste voix ; c'est le levier le plus efficace sur ce corpus. |
+| **Silero VAD** | Beaucoup d'extraits de 5 s n'ont aucun dialogue. Sans détection de parole, Whisper **invente** du texte sur ces extraits (« Thank you for watching »…). Le VAD coupe ces passages avant la transcription. |
+| **`condition_on_previous_text=False`** | Empêche le modèle de propager une erreur ou une invention d'un segment au suivant. |
+| **Seuils de filtrage** (0,6 / −1,0 / 2,4) | Valeurs usuelles : au-delà, Whisper signale lui-même un doute (absence de parole, faible confiance, texte qui se répète en boucle). |
+
+### Limites assumées
+
+- Sans transcription de référence, on ne peut pas calculer un vrai WER ; on
+  mesure ce qui est observable (détection de parole, stabilité entre
+  configurations) et on annote un échantillon à la main.
+- Les cris, rires et pleurs ne sont pas des mots : ils ne seront pas
+  transcrits, alors qu'ils portent une forte charge émotionnelle. C'est au
+  modèle audio du point 4 de les exploiter.
+- Les extraits sans dialogue produiront un texte vide : le modèle texte du
+  point 4 devra s'appuyer aussi sur la description (`caption`) du JSON.
+
 ## Comparaison des configurations
 
 Les choix se font sur l'ensemble de **développement**, jamais sur le test.
-Conserver une copie du CSV à chaque essai :
+Chaque configuration range ses résultats séparément, dans
+`data/transcriptions/<source>/` et `resultats/transcriptions_<source>.csv` :
 
 ```bash
-python 03_transcrire.py --source wav                 # audio brut
-copy resultats\transcriptions.csv resultats\config_A.csv
+python 03_transcrire.py --source wav            # audio brut
+python 04_construire_csv.py --source wav        # -> transcriptions_wav.csv
 
-python 03_transcrire.py                              # piste voix
-copy resultats\transcriptions.csv resultats\config_C.csv
+python 03_transcrire.py                         # piste voix de Demucs
+python 04_construire_csv.py --source voix       # -> transcriptions_voix.csv
 ```
 
 Remplir à la main 50 à 100 extraits dans
@@ -89,7 +136,7 @@ Remplir à la main 50 à 100 extraits dans
 (trois colonnes : `video_id`, `texte`, `a_parole`), puis :
 
 ```bash
-python 05_evaluer_wer.py --csv resultats/config_A.csv
+python 06_evaluer_wer.py --csv resultats/transcriptions_wav.csv
 ```
 
 | Configuration | Traitement | Modèle | WER | Détection de parole |
@@ -99,7 +146,7 @@ python 05_evaluer_wer.py --csv resultats/config_A.csv
 | C | Demucs | large-v3-turbo | à mesurer | à mesurer |
 | D | Demucs + VAD + filtrage | large-v3-turbo | à mesurer | à mesurer |
 
-## Ce que contient le CSV
+## Ce que contient le CSV — `resultats/transcriptions_voix.csv`
 
 | Colonne | Signification |
 |---|---|

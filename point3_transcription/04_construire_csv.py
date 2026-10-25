@@ -7,6 +7,7 @@ Usage :
     python 04_construire_csv.py
 """
 
+import argparse
 import csv
 
 import config
@@ -19,11 +20,17 @@ COLONNES = [
 
 
 def main():
+    analyseur = argparse.ArgumentParser(description="Assemblage des transcriptions")
+    analyseur.add_argument("--source", default="voix",
+                           help="dossier de transcriptions : voix, wav, voix_sans_vad...")
+    options = analyseur.parse_args()
+
     annotations = utils.annotations()
     partition = utils.partition()
+    ligne_dossier = config.TRANSCRIPTIONS / options.source
     lignes = []
 
-    for fichier in sorted(config.TRANSCRIPTIONS.glob("*.json")):
+    for fichier in sorted(ligne_dossier.glob("*.json")):
         resultat = utils.lire_json(fichier)
         video_id = resultat["video_id"]
         film_id = resultat["film_id"]
@@ -44,11 +51,11 @@ def main():
         })
 
     if not lignes:
-        print("Aucune transcription : lancer 03_transcrire.py d'abord.")
+        print(f"Aucune transcription dans {ligne_dossier} : lancer 03_transcrire.py d'abord.")
         return
 
     config.RESULTATS.mkdir(parents=True, exist_ok=True)
-    sortie = config.RESULTATS / "transcriptions.csv"
+    sortie = config.RESULTATS / f"transcriptions_{options.source}.csv"
     with sortie.open("w", newline="", encoding="utf-8") as flux:
         ecrivain = csv.DictWriter(flux, fieldnames=COLONNES)
         ecrivain.writeheader()

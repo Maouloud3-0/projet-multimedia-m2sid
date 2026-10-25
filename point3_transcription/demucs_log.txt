@@ -1,0 +1,61 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Exception ignored in: <finalize object at 0x20a0248b7e0; dead>
+Traceback (most recent call last):
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 933, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\shutil.py", line 615, in _rmtree_unsafe
+    onerror(os.scandir, path, sys.exc_info())
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\konta\\Desktop\\Master SID\\M2 SID\\Projet Multi\\projet-multimedia-m2sid\\.cache\\huggingface\\hub\\models--adefossez--HTDemucs\\tmpenwsh56o'
+Exception ignored in: <finalize object at 0x20a0248b7e0; dead>
+Traceback (most recent call last):
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 933, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\shutil.py", line 615, in _rmtree_unsafe
+    onerror(os.scandir, path, sys.exc_info())
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 890, in onerror
+    _resetperms(path)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Users\konta\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\tempfile.py", line 278, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\konta\\Desktop\\Master SID\\M2 SID\\Projet Multi\\projet-multimedia-m2sid\\.cache\\huggingface\\hub\\models--adefossez--HTDemucs\\snapshots\\cbc8a9b1a87023b7fd74e7b3412e6321c0eab003\\tmphe0o06hu'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\konta\Desktop\Master SID\M2 SID\Projet Multi\projet-multimedia-m2sid\point3_transcription\.venv\Lib\site-packages\demucs\__main__.py", line 10, in <module>
+    main()
+  File "C:\Users\konta\Desktop\Master SID\M2 SID\Projet Multi\projet-multimedia-m2sid\point3_transcription\.venv\Lib\site-packages\demucs\separate.py", line 169, in main
+    origin, res = separator.separate_audio_file(track)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\Desktop\Master SID\M2 SID\Projet Multi\projet-multimedia-m2sid\point3_transcription\.venv\Lib\site-packages\demucs\api.py", line 304, in separate_audio_file
+    return self.separate_tensor(self._load_audio(file), self.samplerate)
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konta\Desktop\Master SID\M2 SID\Projet Multi\projet-multimedia-m2sid\point3_transcription\.venv\Lib\site-packages\demucs\api.py", line 233, in _load_audio
+    raise LoadAudioError(
+demucs.api.LoadAudioError: When trying to load using sphn, got the following error: "data\\wav": Access is denied. (os error 5)
+When trying to load using ffmpeg, got the following error: FFmpeg could not read the file.
+Selected model is a bag of 1 models. You will see that many progress bars per track.
+Separated tracks will be stored in C:\Users\konta\Desktop\Master SID\M2 SID\Projet Multi\projet-multimedia-m2sid\point3_transcription\data\demucs\htdemucs
+Separating track data\wav

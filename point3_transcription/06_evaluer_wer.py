@@ -59,7 +59,7 @@ def lire_sortie(chemin):
 
 def main():
     analyseur = argparse.ArgumentParser(description="Evaluation des transcriptions")
-    analyseur.add_argument("--csv", default=str(config.RESULTATS / "transcriptions.csv"))
+    analyseur.add_argument("--csv", default=str(config.RESULTATS / "transcriptions_voix.csv"))
     options = analyseur.parse_args()
 
     reference = lire_reference()

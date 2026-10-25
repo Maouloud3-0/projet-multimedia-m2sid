@@ -1,0 +1,4 @@
+video_id,film_id,partition,emotion,duree,langue,a_parole,ratio_parole,no_speech_prob,logprob_moyen,texte
+00000_clip_001,00000,test,anger,5.0,en,1,0.965,0.0,-0.2,Wait what happened to my tennis court James you no longer refer to this area as a tennis court
+00000_clip_002,00000,test,anger,6.21,en,1,0.971,0.0,-0.264,"From this point on, this is the yard. Understand something, James? The yard is the most deadliest part of prison."
+00000_clip_006,00000,test,contentment,7.38,en,1,0.907,0.0,-0.216,How many times did I breathe in clean air fragrant with lavender and take it for granted I don't give a fuck how many times

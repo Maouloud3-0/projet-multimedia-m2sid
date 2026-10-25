@@ -104,8 +104,13 @@ def main():
     dossier = choisir_source(options.source)
     avec_vad = not options.sans_vad
 
-    print(f"Modele {config.MODELE} | source {dossier.name} | VAD {avec_vad}")
-    modele = WhisperModel(config.MODELE, device=config.DISPOSITIF,
+    # Une sortie par configuration, pour pouvoir les comparer sans les melanger.
+    etiquette = dossier.name if avec_vad else dossier.name + "_sans_vad"
+    dossier_sortie = config.TRANSCRIPTIONS / etiquette
+    dossier_sortie.mkdir(parents=True, exist_ok=True)
+
+    print(f"Modele {config.CHEMIN_MODELE} | source {dossier.name} | VAD {avec_vad}")
+    modele = WhisperModel(config.CHEMIN_MODELE, device=config.DISPOSITIF,
                           compute_type="float16" if config.DISPOSITIF == "cuda" else "int8")
 
     liste = utils.extraits()
@@ -115,7 +120,7 @@ def main():
     depart = time.time()
     faits = 0
     for extrait in liste:
-        sortie = config.TRANSCRIPTIONS / f"{extrait['video_id']}.json"
+        sortie = dossier_sortie / f"{extrait['video_id']}.json"
         if sortie.exists():
             continue
 
@@ -132,7 +137,7 @@ def main():
         if faits % 100 == 0:
             print(f"  {faits} extraits | {time.time() - depart:.0f} s")
 
-    print(f"{faits} extraits transcrits ->", config.TRANSCRIPTIONS)
+    print(f"{faits} extraits transcrits ->", dossier_sortie)
 
 
 if __name__ == "__main__":

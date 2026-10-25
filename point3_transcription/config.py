@@ -33,6 +33,9 @@ FREQUENCE = 16000                       # Whisper travaille en 16 kHz mono
 # --- Whisper --------------------------------------------------------------
 MODELE = "large-v3-turbo"               # "small" ou "large-v3" pour comparer
 DISPOSITIF = "cuda"                     # "cpu" si pas de carte graphique
+# Dossier local du modele (facultatif). Utile quand les poids sont deja
+# telecharges : WHISPER_MODELE=chemin/vers/le/dossier
+CHEMIN_MODELE = os.environ.get("WHISPER_MODELE", MODELE)
 LANGUE = None                           # None = detection automatique
 
 # --- Filtrage des transcriptions -----------------------------------------
