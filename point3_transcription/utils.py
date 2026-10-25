@@ -1,6 +1,7 @@
 """Petites fonctions partagees par les scripts du point 3."""
 
 import json
+import random
 from pathlib import Path
 
 import config
@@ -16,6 +17,14 @@ def extraits():
             "mp3": mp3,
         })
     return liste
+
+
+def echantillon(liste, nombre, graine=42):
+    """Sous-ensemble aleatoire reproductible (meme tirage dans tous les scripts)."""
+    if not nombre or nombre >= len(liste):
+        return liste
+    generateur = random.Random(graine)
+    return sorted(generateur.sample(liste, nombre), key=lambda e: e["video_id"])
 
 
 def partition():

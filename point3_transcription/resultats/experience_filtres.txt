@@ -1,0 +1,60 @@
+00000_clip_001  [anger]
+   brut  : Wait what happened to my tennis court James you no longer refer to this area as a tennis court
+   bande : Wait, what happened to my tennis court? James you will no longer refer to this area as a tennis court
+   voix  : Wait what happened to my tennis court James you no longer refer to this area as a tennis court
+
+00000_clip_002  [anger]
+   brut  : From this point on, this is the yard. Understand something, James? The yard is the most deadliest part of prison.
+   bande : From this point on, this is the yard. Understand something, James? The yard is the most deadliest part of prison.
+   voix  : From this point on, this is the yard. Understand, Dr. James? The yard is the most deadliest part of prison.
+
+00000_clip_006  [contentment]
+   brut  : How many times did I breathe in clean air fragrant with lavender and take it for granted I don't give a fuck how many times
+   bande : How many times did I breathe in clean air fragrant with lavender and take it for granted? James, I don't give a fuck. How many times?
+   voix  : How many times did I breathe in clean air, fragrant with lavender, and take it for granted? James, I don't give a fuck. How many times?
+
+00000_clip_009  [anger]
+   brut  : You gotta step carefully, because if you step in the wrong place at the wrong time, you'll end up in the wrong territory.
+   bande : You got to step carefully, because if you step in the wrong place at the wrong time, you end up in the wrong territory.
+   voix  : You got to step carefully, because if you step in the wrong place at the wrong time, you end up in the wrong territory.
+
+00000_clip_012  [anger]
+   brut  : Right now, you in the brother's only section, man. You got two seconds to get your white ass out. If you get Molly, what? OK.
+   bande : Right now, you in the brother's only section, man. You got two seconds to get your white ass out. If you get Molly, why? Okay.
+   voix  : Right now, you in the brothers' only section, man. You got two seconds to get your white ass out. If you get Molly, what? Okay.
+
+00000_clip_035  [anger]
+   brut  : I don't want him. I don't want him. He's a Negro lover. You take him. Motherfucker, call him. Say something else. Hey, hey.
+   bande : I don't want him. I don't want him, he's a Negro lover. You take him. Motherfucker, call him. Say something else, bro. Hey, hey.
+   voix  : I don't want him. I don't want him. He's a Negro lover. You think? Motherfucker, call him. Say something else, bro. Hey. Hey.
+
+00000_clip_037  [anger]
+   brut  : Let's just shake hands. There is no shaking hands, gringo. Friendship. You go back where you belong.
+   bande : Let's just shake hands. There is no shaking hands, gringo. You go back where you belong.
+   voix  : Let's just shake hands. There is no shaking hands, gringo. Friendship. You go back where you belong.
+
+00000_clip_040  [fear]
+   brut  : You belong with me who are you I'm Dante
+   bande : You belong with me. Who are you? I'm Dante.
+   voix  : You belong with me Who are you? I'm Dante
+
+00000_clip_046  [excitement]
+   brut  : Let me hold your pocket all right I claimed him
+   bande : Let me hold your pocket. All right. I claimed him!
+   voix  : Let me hold your pocket. All right. I claimed him.
+
+00000_clip_055  [disgust]
+   brut  : Hey, I say I don't like you in this domestic shit in front of me and my crew
+   bande : Hey, I say I don't like you and it's domestic shit in front of me and my crew
+   voix  : Hey, I say I don't like you and it's domestic shit in front of me and my crew
+
+00000_clip_058  [anger]
+   brut  : Don't call me dirty, Carlos. I wasn't dirty when you was up in it. I wasn't dirty then. What?
+   bande : I swear, don't call me dirty, Carlos. I wasn't dirty when you was up in it. I wasn't dirty then.
+   voix  : I'll just go all the way over there. Don't call me dirty, Carlos. I wasn't dirty when you was up in it. I wasn't dirty then.
+
+00000_clip_060  [fear]
+   brut  : So what you should be so what he ain't complaining. He ain't complaining. I'm not complaining because we have yet to have any sort of interaction
+   bande : So what you should be so what he ain't complaining. He ain't complaining. I'm not complaining because we have yet to have any sort of interaction
+   voix  : So what you should be so what he ain't complaining. He ain't complaining. I'm not complaining because we have yet to have any sort of interaction
+

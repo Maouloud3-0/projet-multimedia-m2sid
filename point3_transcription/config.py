@@ -43,3 +43,8 @@ SEUIL_SANS_PAROLE = 0.6   # no_speech_prob au-dessus : segment douteux
 SEUIL_LOGPROB = -1.0      # logprob moyen en dessous : segment douteux
 SEUIL_COMPRESSION = 2.4   # au-dessus : le modele se repete en boucle
 SEUIL_RATIO_PAROLE = 0.10 # en dessous : extrait considere comme sans parole
+
+# --- Experience sur les filtres (script 08) ------------------------------
+# Bande "telephone" : la zone ou la parole est la plus intelligible.
+BANDE_BASSE = 300
+BANDE_HAUTE = 3400

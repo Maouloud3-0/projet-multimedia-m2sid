@@ -58,9 +58,12 @@ pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128
 ### Dépannage Windows
 
 **`Library cublas64_12.dll is not found or cannot be loaded`**
-CTranslate2 (le moteur de faster-whisper) a besoin de cuBLAS et cuDNN, que
-PyTorch installe pour lui-même sans les rendre visibles. On copie les
-bibliothèques dans le dossier de CTranslate2 :
+Le pilote NVIDIA suffit à PyTorch : il embarque sa propre copie de CUDA 12.8
+dans `torch/lib`. Ce n'est donc pas la peine d'installer le CUDA Toolkit.
+En revanche **CTranslate2** (le moteur d'inférence de faster-whisper) ne
+l'embarque pas : il charge `cublas64_12.dll` dynamiquement, et ce dossier
+n'est pas dans son chemin de recherche. On copie donc les bibliothèques
+depuis PyTorch :
 
 ```powershell
 $torch = ".venv\Lib\site-packages\torch\lib"
