@@ -1,0 +1,8 @@
+# Point 3 - transcription audio
+faster-whisper>=1.0.3
+demucs>=4.0.1
+jiwer>=3.0.3
+
+# PyTorch est installe par demucs. Sur une carte recente (RTX 50xx),
+# utiliser la version CUDA 12.8 :
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128

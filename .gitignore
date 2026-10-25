@@ -1,0 +1,16 @@
+# Données produites par le pipeline (volumineuses, régénérables)
+point3_transcription/data/
+*.wav
+*.mp3
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
