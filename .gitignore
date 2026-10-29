@@ -1,5 +1,6 @@
 # Données produites par le pipeline (volumineuses, régénérables)
 point3_transcription/data/
+point4_modelisation/data/
 *.wav
 *.mp3
 

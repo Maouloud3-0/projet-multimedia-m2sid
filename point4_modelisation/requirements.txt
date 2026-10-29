@@ -1,0 +1,9 @@
+numpy
+pandas
+scikit-learn
+joblib
+matplotlib
+librosa
+soundfile
+opencv-python-headless
+transformers>=4.46,<5

@@ -11,7 +11,7 @@ Ce dépôt regroupe le travail des trois parties à coder du projet.
 |---|---|
 | [point2_analyse_partition/](point2_analyse_partition/) | Analyse du corpus et proposition de partition 250 / 50 / 50 films (tâche 2) |
 | [point3_transcription/](point3_transcription/) | **Traitement de l'audio : transcription des extraits en texte** |
-| [point4_modelisation/](point4_modelisation/) | Modélisation séparée du texte, de l'audio et de la vidéo |
+| [point4_modelisation/](point4_modelisation/) | Modélisation séparée de l'audio et de la vidéo (N1 puis N2) |
 | [point5_fusion/](point5_fusion/) | Fusion des trois modalités |
 | [splits/](splits/) | Listes de films des ensembles d'apprentissage, de développement et de test (communes à tous les groupes) |
 
