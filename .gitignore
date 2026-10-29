@@ -3,6 +3,8 @@ point3_transcription/data/
 point4_modelisation/data/
 *.wav
 *.mp3
+point3_transcription/demucs_log.txt
+point3_transcription/resultats/transcriptions.csv
 
 # Caches locaux (uv, modeles Hugging Face)
 .cache/

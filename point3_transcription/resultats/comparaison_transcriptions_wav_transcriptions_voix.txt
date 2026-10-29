@@ -1,20 +1,20 @@
-Comparaison de 300 extraits communs
+Comparaison de 3088 extraits communs
 
 configuration             extraits    parole    part  mots/extrait
-transcriptions_wav             300       203  67.7%          15.2
-transcriptions_voix            300       210  70.0%          15.1
+transcriptions_wav            3088      2119  68.6%          14.9
+transcriptions_voix           3088      2167  70.2%          14.8
 
-Extraits dont le texte change : 133 (44.3%)
-Desaccords sur la presence de parole : 31 (10.3%)
+Extraits dont le texte change : 1332 (43.1%)
+Desaccords sur la presence de parole : 216 (7.0%)
 Similarite moyenne des textes : 0.84
 
 Exemples de differences
+  00000_clip_001
+    transcriptions_wav : Wait what happened to my tennis court James you no longer refer to this area as a tennis court
+    transcriptions_voix : Wait, what happened to my tennis court? James, you will no longer refer to this area as a tennis court.
   00000_clip_006
     transcriptions_wav : How many times did I breathe in clean air fragrant with lavender and take it for granted I don't give a fuck how many times
     transcriptions_voix : How many times did I breathe in clean air, fragrant with lavender, and take it for granted? James, I don't give a fuck. How many t
-  00000_clip_062
-    transcriptions_wav : Let me ride you into safety. Don't let them fight you like that. Don't let them fight you like that.
-    transcriptions_voix : let me ride you in a safe don't let them fight you like that don't let them fight you
-  00007_clip_040
-    transcriptions_wav : Mia, you've got something special. Your dad had it, too, but...
-    transcriptions_voix : I mean, you've got something special. Your dad had it too, but...
+  00000_clip_009
+    transcriptions_wav : You gotta step carefully, because if you step in the wrong place at the wrong time, you'll end up in the wrong territory.
+    transcriptions_voix : You got to step carefully, because if you step in the wrong place at the wrong time, you end up in the wrong territory.

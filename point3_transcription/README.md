@@ -153,24 +153,24 @@ python 06_evaluer_wer.py --csv resultats/transcriptions_wav.csv
 | Mots par extrait (extraits parlés) | 14,9 |
 | Temps de calcul | 0,3 s par extrait sur RTX 5070 |
 
-### Comparaison audio brut / voix isolée (300 extraits tirés au hasard)
+### Comparaison audio brut / voix isolée sur les 3 088 extraits
 
-| Configuration | Traitement | Parole détectée | Textes qui changent | Similarité |
-|---|---|---|---|---|
-| A | audio brut | 203 (67,7 %) | référence | — |
-| C | Demucs (voix isolée) | 210 (70,0 %) | 133 (44,3 %) | 0,84 |
-| B | passe-bande 300–3 400 Hz | 12 extraits testés : mêmes textes hors ponctuation | — | — |
+| Configuration | Traitement | Parole détectée | Mots/extrait | Textes modifiés | Similarité |
+|---|---|---|---|---|---|
+| A | audio brut | 2 119 (68,6 %) | 14,9 | référence | — |
+| C | Demucs (voix isolée) | 2 167 (70,2 %) | 14,8 | 1 332 (43,1 %) | 0,84 |
+| B | passe-bande 300–3 400 Hz | 12 extraits testés : mêmes textes hors ponctuation | — | — | — |
 
-**Interprétation.** La séparation des voix fait légèrement augmenter la détection
-de parole (+2,3 points) et modifie 44 % des textes, mais sans référence humaine
-on ne peut pas dire lesquels sont meilleurs : Demucs corrige parfois une phrase
-et en invente parfois une autre. Le filtre fréquentiel manuel, lui, ne change
-pratiquement rien — la musique occupe la même bande que la voix.
+**Interprétation.** Sur les 3 088 extraits, la séparation des voix augmente
+légèrement la détection de parole (+1,6 point, surtout sur `amusement` +4,9 pts
+et `fear` +4,6 pts) et modifie 43,1 % des textes. Sans référence humaine, on ne
+peut pas affirmer lesquels sont meilleurs : Demucs retrouve parfois un mot
+couvert par la musique et en déforme parfois un autre. Le filtre fréquentiel
+manuel ne change pratiquement rien — la musique occupe la même bande que la voix.
 
-**Conséquence pour le projet.** La transcription de l'audio brut est retenue
-comme configuration de référence : elle est complète sur les 3 088 extraits et
-Demucs n'apporte pas de gain démontré. Le WER sur un échantillon annoté à la
-main reste à mesurer.
+**Conséquence pour le projet.** Les deux fichiers complets de 3 088 extraits
+(`transcriptions_wav.csv` et `transcriptions_voix.csv`) sont disponibles dans
+`resultats/` pour le modèle texte du point 4.
 
 ## Ce que contient le CSV — `resultats/transcriptions_voix.csv`
 

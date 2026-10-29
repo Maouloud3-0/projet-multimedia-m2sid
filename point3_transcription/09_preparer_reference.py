@@ -58,7 +58,7 @@ function exporter() {{
 
 BLOC = """<div class="extrait" data-id="{identifiant}">
   <div class="titre">{identifiant} - {emotion}</div>
-  <audio controls preload="none" src="{source}"></audio>
+  <audio controls preload="metadata" src="{source}"></audio>
   <input type="text" placeholder="Ce qui est dit...">
   <label><input type="checkbox"> aucun dialogue</label>
 </div>"""
