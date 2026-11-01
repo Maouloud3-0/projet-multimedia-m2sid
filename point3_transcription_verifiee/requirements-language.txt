@@ -1,0 +1,2 @@
+# Installé à part dans runtime/language_dependencies (numpy vient de .venv).
+langid==1.1.6

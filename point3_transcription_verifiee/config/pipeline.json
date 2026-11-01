@@ -1,0 +1,142 @@
+{
+  "asr": {
+    "threads": 8,
+    "request_timeout_seconds": 240,
+    "whisper": {
+      "beam_size": 5,
+      "best_of": 5,
+      "temperature": 0.0,
+      "temperature_increment": 0.2,
+      "no_speech_threshold": 0.6
+    },
+    "qwen": {
+      "temperature": 0,
+      "seed": 42,
+      "max_tokens": 512,
+      "context_size": 4096
+    }
+  },
+  "acoustic": {
+    "threads_per_model": 2,
+    "silero": {
+      "frame_samples": 512,
+      "context_samples": 64,
+      "speech_threshold": 0.5,
+      "exit_threshold": 0.35,
+      "min_speech_ms": 250,
+      "min_silence_ms": 100,
+      "padding_ms": 30
+    },
+    "yamnet": {
+      "window_samples": 15600,
+      "hop_samples": 7800,
+      "evidence_threshold": 0.5,
+      "speech_classes": [
+        "Speech",
+        "Child speech, kid speaking",
+        "Conversation",
+        "Narration, monologue",
+        "Whispering"
+      ],
+      "vocalization_classes": [
+        "Shout",
+        "Bellow",
+        "Whoop",
+        "Yell",
+        "Children shouting",
+        "Screaming",
+        "Laughter",
+        "Crying, sobbing",
+        "Chatter",
+        "Hubbub, speech noise, speech babble"
+      ],
+      "music_classes": [
+        "Music"
+      ],
+      "singing_classes": [
+        "Singing",
+        "Choir",
+        "Yodeling",
+        "Chant",
+        "Mantra",
+        "Child singing",
+        "Synthetic singing",
+        "Rapping",
+        "Humming"
+      ]
+    },
+    "diagnostics": {
+      "text_similarity_threshold": 0.85,
+      "low_speech_fraction": 0.05,
+      "low_yamnet_speech_peak": 0.3,
+      "empty_speech_fraction": 0.2
+    }
+  },
+  "separation": {
+    "chunk_seconds": 8,
+    "hop_seconds": 4
+  },
+  "routing": {
+    "all_three_empty_is_no_dialogue": true,
+    "original_supported_pair_has_priority": true,
+    "similarity_threshold": 0.9,
+    "minimum_token_length_ratio": 0.85,
+    "short_text_max_tokens": 4,
+    "short_text_requires_exact_match": true,
+    "supported_silero_fraction": 0.2,
+    "supported_yamnet_speech_peak": 0.5,
+    "low_silero_fraction": 0.05,
+    "low_yamnet_speech_peak": 0.3,
+    "singing_peak_requires_uncertain": 0.5,
+    "minimum_recovered_speech_rms_ratio": 0.01,
+    "blocking_flags": [
+      "token_limit",
+      "long_repetition_candidate",
+      "unexpected_response_format",
+      "unknown_language_label",
+      "operational_failure"
+    ],
+    "protected_words": [
+      "no",
+      "not",
+      "never",
+      "nothing",
+      "nobody",
+      "none",
+      "neither",
+      "nor",
+      "without",
+      "pas",
+      "jamais",
+      "rien",
+      "aucun",
+      "aucune",
+      "personne",
+      "ni",
+      "sans"
+    ],
+    "nonlexical_markers": [
+      "music",
+      "instrumental",
+      "instrumental music",
+      "background music",
+      "silence",
+      "no speech",
+      "no dialogue",
+      "non speech",
+      "applause",
+      "laughter",
+      "inaudible",
+      "unintelligible"
+    ]
+  },
+  "cleaning": {
+    "allowed_languages": [
+      "en"
+    ],
+    "detector_score_threshold": 0.9,
+    "detector_minimum_word_tokens": 5,
+    "music_symbols": "♪♫♬♩",
+    "unicode_normalization": "NFC"
+  }
+}

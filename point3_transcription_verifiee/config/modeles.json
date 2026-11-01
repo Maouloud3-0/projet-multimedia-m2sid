@@ -1,0 +1,17 @@
+{
+  "asr": {
+    "whisper_server": "../local_asr/runtime-vulkan/whisper-server.exe",
+    "whisper_model": "../local_asr/models/ggml-large-v3.bin",
+    "qwen_server": "../local_asr/qwen_benchmark/runtime/llama-server.exe",
+    "qwen_decoder": "../local_asr/qwen_benchmark/models/Qwen3-ASR-1.7B-Q8_0.gguf",
+    "qwen_encoder": "../local_asr/qwen_benchmark/models/mmproj-Qwen3-ASR-1.7B-Q8_0.gguf"
+  },
+  "acoustique": {
+    "silero": "models/acoustic/silero_vad.onnx",
+    "yamnet": "models/acoustic/yamnet.tflite",
+    "class_map": "models/acoustic/yamnet_class_map.csv"
+  },
+  "separation": {
+    "bandit": "models/bandit/gpu/bandit-speech-fp32-8s.onnx"
+  }
+}
