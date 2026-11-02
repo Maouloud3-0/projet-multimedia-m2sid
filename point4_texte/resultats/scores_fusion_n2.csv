@@ -1,0 +1,7 @@
+k,f1_cv,f1_dev,modeles
+1,0.32962753902866077,0.3383825957249149,emb_e5
+2,0.34652426231756467,0.3916793243978216,emb_e5 + emb_ekman
+3,0.34292464986567023,0.3837285385292341,emb_e5 + emb_ekman + emb_mpnet
+4,0.34087910320492737,0.38219478940917584,emb_e5 + emb_ekman + emb_mpnet + emb_bge
+5,0.35170113828634053,0.38422495112430244,emb_e5 + emb_ekman + emb_mpnet + emb_bge + emb_goemotions
+6,0.35205034692590054,0.36555762176588974,emb_e5 + emb_ekman + emb_mpnet + emb_bge + emb_goemotions + tfidf

@@ -1,8 +1,0 @@
-k,f1_cv,f1_dev,modeles
-1,0.3346134344869919,0.37009083382640073,ft_ekman
-2,0.34434174440222515,0.3708831529186445,ft_ekman + emb_e5
-3,0.35075911558492917,0.371415353129839,ft_ekman + emb_e5 + emb_ekman
-4,0.3490263894498175,0.39213224690831505,ft_ekman + emb_e5 + emb_ekman + emb_mpnet
-5,0.34734008251848614,0.3877694253822317,ft_ekman + emb_e5 + emb_ekman + emb_mpnet + emb_bge
-6,0.3449229608558434,0.38441801677661136,ft_ekman + emb_e5 + emb_ekman + emb_mpnet + emb_bge + emb_goemotions
-7,0.3478495801735294,0.37152538436297594,ft_ekman + emb_e5 + emb_ekman + emb_mpnet + emb_bge + emb_goemotions + tfidf
