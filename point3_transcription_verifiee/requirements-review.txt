@@ -1,0 +1,3 @@
+label-studio==1.23.2
+# Lecture de la fréquence d'images des vidéos pour préparer la vérification.
+opencv-python-headless==4.12.0.88
