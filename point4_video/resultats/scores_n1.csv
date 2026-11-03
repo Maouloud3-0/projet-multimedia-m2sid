@@ -1,0 +1,2 @@
+modele,dimension,C,class_weight,f1_cv,f1_dev,exactitude_dev
+n1,270,0.0003,balanced,0.185294914172497,0.19996193439457272,0.2081447963800905
