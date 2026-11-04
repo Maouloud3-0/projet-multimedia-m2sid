@@ -15,6 +15,7 @@ Ce dépôt regroupe le travail des trois parties à coder du projet.
 | [point4_modelisation/](point4_modelisation/) | Modélisation séparée de l'audio et de la vidéo (N1 puis N2) |
 | [point4_texte/](point4_texte/) | Modèles texte : TF-IDF, encodeurs gelés, fine-tuning et fusion |
 | [point4_video/](point4_video/) | Modèles vidéo : préparation des images, encodeurs, visages, attention et fusion |
+| [point4_audio/](point4_audio/) | Modèles audio : descripteurs eGeMAPS, encodeurs gelés (Whisper, WavLM…), attention et fusion |
 | [point5_fusion/](point5_fusion/) | Fusion des trois modalités |
 | [splits/](splits/) | Listes de films des ensembles d'apprentissage, de développement et de test (communes à tous les groupes) |
 

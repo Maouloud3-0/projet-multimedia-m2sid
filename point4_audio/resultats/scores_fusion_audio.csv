@@ -1,0 +1,12 @@
+k,f1_cv,f1_dev,modeles
+1,0.2689676537641353,0.26672866124184214,emb_whisper
+2,0.268892024868964,0.26116742590901393,emb_whisper + att_whisper
+3,0.26763838965993014,0.2698016213214369,emb_whisper + att_whisper + emb_wavlm
+4,0.2713377660421108,0.2704666874545819,emb_whisper + att_whisper + emb_wavlm + att_wavlm
+5,0.26578285556109604,0.25643634228637957,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo
+6,0.2661742648948314,0.26429261524648295,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap
+7,0.2670935613665862,0.26287564007335035,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap + att_w2v2_emo
+8,0.2675467756655561,0.2643279502342303,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap + att_w2v2_emo + emb_ast
+9,0.2641669294107717,0.2672777707459849,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap + att_w2v2_emo + emb_ast + att_ast
+10,0.26412872996494985,0.2649051323235423,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap + att_w2v2_emo + emb_ast + att_ast + audioset
+11,0.2614719763391391,0.26192294190081444,emb_whisper + att_whisper + emb_wavlm + att_wavlm + emb_w2v2_emo + emb_clap + att_w2v2_emo + emb_ast + att_ast + audioset + n1

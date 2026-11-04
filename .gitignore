@@ -3,6 +3,7 @@ point3_transcription/data/
 point4_modelisation/data/
 point4_texte/data/
 point4_video/data/
+point4_audio/data/
 *.wav
 *.mp3
 point3_transcription/demucs_log.txt
