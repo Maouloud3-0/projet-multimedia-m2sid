@@ -1,0 +1,2 @@
+parametres,f1_cv_recherche,f1_cv,f1_dev,exactitude_dev,attention_video,attention_texte,attention_audio
+"{""cachee"": 256, ""couches"": 0, ""dropout"": 0.3086357692866407, ""lr"": 0.0001489648766130201, ""weight_decay"": 0.0024642119652980637, ""epoques"": 16, ""morceaux_retires"": 0.19473348262391943, ""modalite_retiree"": 0.18840297349880022}",0.42552861857965374,0.43943843379890896,0.4497326552183201,0.4479638009049774,0.9533583,0.029140271,0.017501615

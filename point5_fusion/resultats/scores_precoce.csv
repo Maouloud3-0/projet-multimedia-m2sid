@@ -1,0 +1,6 @@
+variante,modalites,dimension,parametres,f1_cv,f1_dev,exactitude_dev
+brut,video,3108,"{""C"": 0.001, ""class_weight"": ""balanced""}",0.4314456298546298,0.4411583007468183,0.4411764705882353
+brut,video+texte+audio,5413,"{""C"": 0.001, ""class_weight"": ""balanced""}",0.42798420019300776,0.4376639658220419,0.4411764705882353
+equilibre,video+texte+audio,5413,"{""C"": 0.001, ""class_weight"": ""balanced""}",0.414656474012562,0.4380523445335759,0.4434389140271493
+brut,video+texte,4133,"{""C"": 0.001, ""class_weight"": ""balanced""}",0.4282257572585185,0.4693350456719908,0.4683257918552036
+brut,video+audio,4388,"{""C"": 0.001, ""class_weight"": ""balanced""}",0.4230326979708797,0.4320478910151283,0.4343891402714932

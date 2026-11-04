@@ -4,6 +4,7 @@ point4_modelisation/data/
 point4_texte/data/
 point4_video/data/
 point4_audio/data/
+point5_fusion/data/
 *.wav
 *.mp3
 point3_transcription/demucs_log.txt
