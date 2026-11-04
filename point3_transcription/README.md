@@ -20,7 +20,7 @@
 | | |
 |---|---|
 | Extraits traités | 3 088 |
-| Relus à la main | 1 005 |
+| Relus à la main | 1 032 |
 | Avec dialogue anglais | 2 025 (66 %) |
 | Sans dialogue | 994 |
 | Autre langue / incertain | 67 / 2 |
@@ -58,7 +58,7 @@ l'émotion, la description et le dialogue. C'est l'entrée de tous les modèles 
 
 ## Résultats détaillés
 
-Décisions prises sur les 1 005 extraits relus :
+Décisions prises sur les 1 032 extraits relus :
 
 | Décision | Extraits |
 |---|---:|
@@ -98,7 +98,7 @@ l'écoute de tous les désaccords.
 
 ## Limites
 
-- Seuls les extraits douteux ont été relus (1 005 sur 3 088) ; les autres
+- Seuls les extraits douteux ont été relus (1 032 sur 3 088) ; les autres
   transcriptions sont acceptées automatiquement et peuvent contenir des erreurs.
 - Les cris, rires et pleurs ne sont pas des mots et ne sont pas transcrits,
   alors qu'ils portent beaucoup d'émotion.

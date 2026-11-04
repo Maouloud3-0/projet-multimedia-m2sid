@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 from pathlib import Path
 
-from lib.commun import RESULTATS, arguments, chemin_extrait, ecrire_jsonl, extraits, lire_json
+from lib.commun import RACINE, RESULTATS, arguments, chemin_extrait, ecrire_jsonl, extraits, lire_json
 from lib.routage import aiguiller
 
 
@@ -32,7 +32,9 @@ def main():
                            route=decision["route"], reasons=decision["reasons"],
                            proposed_text=decision["proposed_text"], proposed_source=decision["proposed_source"],
                            raw_transcripts=brutes, original_pair=decision["original_pair"],
-                           separated_audio=separe["separation"]["recognition_path"] if separe else None))
+                           # chemin relatif au dossier du corpus, pour ne pas dépendre de la machine
+                           separated_audio=(Path(separe["separation"]["recognition_path"]).resolve()
+                                            .relative_to(RACINE.resolve()).as_posix() if separe else None)))
     ecrire_jsonl(args.sortie, sortie)
     print(dict(Counter(r["route"] for r in sortie)))
 

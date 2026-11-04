@@ -108,6 +108,9 @@ chaque tranche). 30 essais Optuna par encodeur, puis 3 graines.
 | wav2vec2 émotion | **0,249** | 0,242 | 0,265 |
 | AST | **0,241** | 0,235 | 0,243 |
 
+(F1 cv moyen par pli, comme pour N2 ; sur les prédictions hors pli regroupées, Whisper + attention
+obtient 0,264, valeur du tableau d'ouverture.)
+
 Comme pour la vidéo, l'attention ne bat pas systématiquement la moyenne dans le temps, mais elle
 donne des sorties différentes, utiles pour la combinaison.
 

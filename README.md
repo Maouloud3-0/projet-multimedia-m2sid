@@ -15,7 +15,7 @@ F1 macro (8 classes, hasard : 0,125). **cv** : validation croisée sur train ; *
 | Audio — Whisper et WavLM gelés, régression logistique et attention | 0,271 | 0,270 | 0,297 |
 | Texte — description + dialogue, 4 modèles affinés et 2 gelés | 0,362 | 0,387 | 0,365 |
 | Vidéo — PE, SigLIP 2, CLIP gelés + visages, régression logistique et attention | 0,450 | 0,461 | 0,413 |
-| **Fusion — moyenne pondérée des trois (vidéo 3, texte 1, audio 1)** | **0,455** | **0,486** | **0,419** |
+| **Fusion — moyenne pondérée des trois (vidéo 0,6, texte 0,2, audio 0,2)** | **0,455** | **0,486** | **0,419** |
 
 La vidéo domine : selon l'article EmoVid, 80 % des émotions ont été annotées par un modèle qui ne voit que les
 images. La fusion gagne 2,5 points sur dev (significatif) et 0,6 point sur test (non significatif).
@@ -66,7 +66,7 @@ versionné.
 
 ## Relancer
 
-Python 3.11, une carte graphique pour les encodeurs (8 Go suffisent). Chaque dossier a son `requirements.txt`.
+Python 3.11, une carte graphique pour les encodeurs (8 Go suffisent). Les points 3 à 5 ont chacun leur `requirements.txt` ; le point 2 n'utilise que la bibliothèque standard de Python.
 Ordre : point 3 (ou directement son `corpus.csv` versionné), puis les trois modules du point 4 dans
 n'importe quel ordre (la vidéo d'abord si l'on relance aussi l'audio, qui réutilise `point4_video/resultats/fin_pub.csv`),
 puis le point 5. Les commandes sont dans le README de chaque dossier.

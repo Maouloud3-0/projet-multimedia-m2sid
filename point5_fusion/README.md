@@ -3,9 +3,9 @@
 ## En bref
 
 ```
- vidéo (point4_video) ──> 8 probabilités ──┐  × 3
- texte (point4_texte) ──> 8 probabilités ──┼─ × 1 ──> moyenne pondérée ──> 8 émotions
- audio (point4_audio) ──> 8 probabilités ──┘  × 1
+ vidéo (point4_video) ──> 8 probabilités ──┐  × 0,6
+ texte (point4_texte) ──> 8 probabilités ──┼─ × 0,2 ──> moyenne pondérée ──> 8 émotions
+ audio (point4_audio) ──> 8 probabilités ──┘  × 0,2
 ```
 
 | Système | F1 cv | F1 dev | F1 test |
@@ -13,7 +13,7 @@
 | Audio seul | 0,271 | 0,270 | 0,297 |
 | Texte seul | 0,362 | 0,387 | 0,365 |
 | Vidéo seule | 0,450 | 0,461 | 0,413 |
-| **Fusion : moyenne pondérée (vidéo 3, texte 1, audio 1)** | **0,455** | **0,486** | **0,419** |
+| **Fusion : moyenne pondérée (vidéo 0,6, texte 0,2, audio 0,2)** | **0,455** | **0,486** | **0,419** |
 
 - Trois façons de fusionner ont été comparées avec le même protocole : **A** combiner les probabilités,
   **B** mettre les vecteurs bout à bout, **C** un petit modèle multimodal à attention.
@@ -34,8 +34,9 @@ et, pour B et C, les vecteurs gelés du meilleur encodeur de chaque modalité, a
 | Audio | Whisper large-v3, couche 16 | `point4_audio/data/couches_whisper.npy`, `seg_whisper.npy` | 0,265 |
 
 Les vecteurs vidéo ont été recalculés avec les scripts `01` à `03` de [point4_video](../point4_video/), sans
-modification : PE moyenné et régression logistique redonnent exactement le F1 du module vidéo (0,4241 en CV,
-0,4110 sur dev).
+modification : PE moyenné sans visages et régression logistique redonnent exactement le F1 du module vidéo
+pour cette configuration (0,4241 en CV moyen par pli, 0,4110 sur dev, ligne `pe`, `aucun` de
+`point4_video/resultats/scores_n2.csv`).
 
 ## Comment on mesure
 
@@ -54,14 +55,15 @@ modification : PE moyenné et régression logistique redonnent exactement le F1 
 [01_fusion_tardive.py](01_fusion_tardive.py). Chaque modalité a déjà voté ; on combine les votes :
 
 - **moyenne** : les trois modalités comptent autant ;
-- **pondérée** : un poids par modalité, de 0 à 1 par pas de 0,1, choisi en CV ;
+- **pondérée** : un poids par modalité, de 0 à 1 par pas de 0,1, choisi en CV ; seules les proportions
+  comptent (0,3 / 0,1 / 0,1 équivaut à 0,6 / 0,2 / 0,2 une fois ramené à une somme de 1) ;
 - **stacking** : régression logistique sur les 24 log-probabilités (3 × 8), C choisi en CV.
 
 | Méthode (systèmes finaux du point 4) | Poids ou réglage | F1 cv | F1 dev |
 |---|---|---|---|
 | Vidéo seule | — | 0,450 | 0,461 |
 | Moyenne simple | 1 / 1 / 1 | 0,435 | 0,451 |
-| **Moyenne pondérée** | **vidéo 0,3, texte 0,1, audio 0,1** | **0,455** | **0,486** |
+| **Moyenne pondérée** | **vidéo 0,3, texte 0,1, audio 0,1 (soit 0,6 / 0,2 / 0,2)** | **0,455** | **0,486** |
 | Stacking | C = 0,003, classes équilibrées | 0,412 | 0,452 |
 
 Apport de chaque modalité (moyenne pondérée) :

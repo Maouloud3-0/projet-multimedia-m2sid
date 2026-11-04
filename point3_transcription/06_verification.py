@@ -19,8 +19,8 @@ from lib.verification import interface_xml, lire_decision
 
 
 def lien_media(chemin):
-    """Label Studio lit les fichiers locaux à partir de RACINE."""
-    return "/data/local-files/?d=" + quote(Path(chemin).resolve().relative_to(RACINE).as_posix())
+    """Label Studio lit les fichiers locaux à partir de RACINE (chemin absolu, ou relatif à RACINE)."""
+    return "/data/local-files/?d=" + quote((RACINE / chemin).resolve().relative_to(RACINE).as_posix())
 
 
 def preparer(routage, donnees, dossier):
