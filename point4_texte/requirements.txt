@@ -1,0 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+transformers>=4.46,<5
+sentence-transformers==6.2.0
+scikit-learn
+pandas
+matplotlib
+tqdm
+ipykernel

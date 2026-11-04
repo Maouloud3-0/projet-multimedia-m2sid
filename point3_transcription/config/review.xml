@@ -1,0 +1,49 @@
+<View>
+  <Style>
+    .review-card { padding: 16px; border: 1px solid #dbe2ea; border-radius: 8px; margin-bottom: 16px; background: #ffffff; }
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .review-transcript { max-height: 220px; overflow: auto; padding: 8px; background: #f5f7fa; border-radius: 5px; }
+    .review-help { color: #526172; font-size: 13px; }
+  </Style>
+  <Header value="$clip_heading" size="3"/>
+  <Text name="case_info" value="$case_info"/>
+  <View className="review-card">
+    <!-- ORIGINAL_VIDEO -->
+    <Header value="Original audio" size="4"/>
+    <Audio name="original_audio" value="$original_audio" hotkey="alt+o" height="120" ORIGINAL_SYNC/>
+    <!-- SEPARATED_AUDIO -->
+    <Text name="listening_help" value="Judge intelligible dialogue. Background music can coexist with speech. Listen to the original audio before deciding. Alt+O plays/pauses original audio."/>
+  </View>
+  <View className="review-grid">
+    <View className="review-card">
+      <Header value="Whisper: original audio" size="4"/>
+      <Text name="whisper_meta" value="$whisper_meta"/>
+      <View className="review-transcript"><Text name="whisper_text" value="$whisper_display"/></View>
+    </View>
+    <View className="review-card">
+      <Header value="Qwen: original audio" size="4"/>
+      <Text name="qwen_meta" value="$qwen_meta"/>
+      <View className="review-transcript"><Text name="qwen_text" value="$qwen_display"/></View>
+    </View>
+    <!-- SEPARATED_TEXT -->
+  </View>
+  <View className="review-card">
+    <Header value="Your decision" size="4"/>
+    <Text name="decision_help" value="Music only means no intelligible words. If speech is unclear or in a language you cannot understand, choose Uncertain. Select one option, then Submit (Ctrl+Enter)."/>
+    <Choices name="decision" toName="original_audio" choice="single-radio" required="true" requiredMessage="Choose a review decision before submitting.">
+      <Choice value="Music only / empty text" hotkey="1"/>
+      <Choice value="No dialogue / other sounds" hotkey="2"/>
+      <Choice value="Use Whisper" hotkey="3"/>
+      <Choice value="Use original Qwen" hotkey="4"/>
+      <!-- SEPARATED_CHOICE -->
+      <Choice value="Edit transcript" hotkey="6"/>
+      <Choice value="Uncertain" hotkey="7"/>
+    </Choices>
+    <View visibleWhen="choice-selected" whenTagName="decision" whenChoiceValue="Edit transcript">
+      <Header value="Corrected transcript (required for Edit transcript)" size="4"/>
+      <TextArea name="edited_text" toName="original_audio" rows="4" maxSubmissions="1" editable="true" transcription="true" required="true" requiredMessage="Enter the corrected transcript, or choose No dialogue / Uncertain."/>
+    </View>
+    <Header value="Notes (optional)" size="5"/>
+    <TextArea name="review_notes" toName="original_audio" rows="2" maxSubmissions="1" editable="true"/>
+  </View>
+</View>

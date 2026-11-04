@@ -1,0 +1,16 @@
+k,f1_cv,f1_dev,modeles
+1,0.4304403825998311,0.4411583007468183,emb_pe
+2,0.4312549824355867,0.45403504981214304,emb_pe + att_pe
+3,0.4393825155432567,0.4581698352241659,emb_pe + att_pe + att_siglip2
+4,0.4376961513438854,0.45878124223505956,emb_pe + att_pe + att_siglip2 + emb_siglip2
+5,0.44068455509199217,0.4603659223888701,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b
+6,0.44955235627576284,0.4607435401533837,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h
+7,0.4453985502064246,0.4677745301053935,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l
+8,0.4443348677367143,0.4650057095373843,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l
+9,0.440688869040151,0.4744893382605797,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h
+10,0.44695214251794896,0.46060388764137705,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b
+11,0.44713449259484106,0.4698025461525456,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b + emb_dinov2
+12,0.4421590911407366,0.4599946021288396,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b + emb_dinov2 + att_dinov2
+13,0.44537934405308255,0.4646240835688157,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b + emb_dinov2 + att_dinov2 + emb_videomae
+14,0.44559042642737723,0.45975307735892185,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b + emb_dinov2 + att_dinov2 + emb_videomae + visages
+15,0.4435872963671618,0.4601350693143966,emb_pe + att_pe + att_siglip2 + emb_siglip2 + emb_clip_b + emb_clip_h + emb_clip_l + att_clip_l + att_clip_h + att_clip_b + emb_dinov2 + att_dinov2 + emb_videomae + visages + n1

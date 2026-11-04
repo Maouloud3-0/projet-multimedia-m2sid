@@ -1,0 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.6
+scipy==1.18.1
+soundfile==0.14.0
+tqdm==4.70.1
+onnxruntime==1.31.0
+ai-edge-litert==2.3.0
+torch==2.6.0+cpu
+torchaudio==2.6.0+cpu

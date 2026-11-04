@@ -1,0 +1,23 @@
+# Données intermédiaires (volumineuses, régénérables par les scripts)
+point4_texte/data/
+point4_video/data/
+point4_audio/data/
+point5_fusion/data/
+*.wav
+*.mp3
+*.mp4
+
+# Caches locaux (modèles Hugging Face)
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
