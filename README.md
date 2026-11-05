@@ -5,6 +5,9 @@ contentment, disgust, excitement, fear, sadness) d'extraits de film du corpus
 [EmoVid](https://zane-zyqiu.github.io/EmoVid/) (section *movie* : 350 films, 3 088 extraits), à partir du
 texte, de l'audio et de la vidéo, puis en fusionnant les trois.
 
+Le rapport complet (données, méthodes, analyse, limites) est dans [RAPPORT.md](RAPPORT.md) ; chaque dossier a
+aussi son README détaillé.
+
 ## Résultats
 
 F1 macro (8 classes, hasard : 0,125). **cv** : validation croisée sur train ; **dev** : mesure ;
@@ -32,6 +35,44 @@ images. La fusion gagne 2,5 points sur dev (significatif) et 0,6 point sur test 
 | [point5_fusion/](point5_fusion/) | 5. Fusion | Fusion tardive, fusion précoce, modèle multimodal à attention, système final |
 
 Chaque dossier a son README : ce qui a été essayé, les scores, comment relancer.
+
+## Méthodes en bref
+
+Chaque modalité va du plus simple au plus riche, avec trois niveaux :
+
+| | N1 : descripteurs classiques | N2 : encodeurs pré-entraînés gelés + classifieur | N3 : partie apprise en plus | Système final |
+|---|---|---|---|---|
+| **Texte** | TF-IDF — 0,295 | mpnet, e5, bge, modèles d'émotion — 0,330 (e5) | fine-tuning de 6 modèles — 0,341 (ekman) | moyenne de 6 modèles — **0,362** |
+| **Audio** | eGeMAPS + MFCC — 0,212 | Whisper, WavLM, wav2vec2, AST, CLAP — 0,265 (Whisper, couche 16) | attention sur 16 tranches de temps — 0,258 | moyenne de 4 modèles — **0,271** |
+| **Vidéo** | couleurs, luminosité — 0,192 | PE, SigLIP 2, CLIP, DINOv2… + visages — 0,430 (PE) | attention sur 16 images — 0,421 | moyenne de 6 modèles — **0,450** |
+
+(F1 cv du meilleur modèle de chaque niveau.)
+
+- **Encodeur gelé** : un modèle pré-entraîné sur de grandes quantités de données transforme l'extrait en
+  vecteur ; on ne modifie pas ses poids, il ne voit aucune étiquette, et il ne tourne qu'une fois sur les
+  3 088 extraits. Seul le petit classifieur posé dessus est appris.
+- **Système final d'une modalité** : moyenne des probabilités des *k* meilleurs modèles, *k* choisi en
+  validation croisée.
+
+Pour la **fusion** (point 5), trois approches ont été comparées :
+
+| Approche | Principe | F1 cv | F1 dev |
+|---|---|---:|---:|
+| **A, fusion tardive** | moyenne pondérée des probabilités des trois modalités | **0,455** | **0,486** |
+| C, modèle multimodal | tête d'attention sur 16 images, 1 texte et 16 tranches de son | 0,439 | 0,450 |
+| B, fusion précoce | vecteurs des trois modalités mis bout à bout, une régression logistique | 0,428 | 0,438 |
+
+## Comment lire les scores
+
+- **F1 macro** : pour chaque émotion, le F1 combine la précision (quand le modèle dit « peur », a-t-il
+  raison ?) et le rappel (retrouve-t-il les vraies peurs ?). Le F1 macro est la moyenne sur les 8 émotions,
+  chacune comptant pareil malgré le déséquilibre des classes. Hasard : 0,125.
+- **F1 cv** : les 250 films de train sont répartis en 5 paquets ; on apprend sur 4 paquets et on prédit le
+  5ᵉ, cinq fois. Chaque extrait de train est ainsi prédit par un modèle qui n'a jamais vu son film
+  (prédiction **hors pli**). Le F1 cv est calculé sur ces 2 207 prédictions. Il sert à faire tous les choix.
+- **F1 dev** : le modèle final, appris sur tout train, prédit les 50 films de dev. Ce score ne sert qu'à
+  vérifier que le F1 cv était fiable (les deux sont proches dans tous nos modules).
+- **F1 test** : calculé une seule fois, à la fin, pour le système retenu.
 
 ## Protocole commun
 
@@ -70,6 +111,35 @@ Python 3.11, une carte graphique pour les encodeurs (8 Go suffisent). Les points
 Ordre : point 3 (ou directement son `corpus.csv` versionné), puis les trois modules du point 4 dans
 n'importe quel ordre (la vidéo d'abord si l'on relance aussi l'audio, qui réutilise `point4_video/resultats/fin_pub.csv`),
 puis le point 5. Les commandes sont dans le README de chaque dossier.
+
+## Analyse des résultats
+
+- **La vidéo domine** (0,461 sur dev), devant le texte (0,387) et l'audio (0,270). D'après l'article EmoVid,
+  80 % des émotions ont été annotées par un modèle vision-langage qui ne voit que les images : les étiquettes
+  reflètent surtout l'image.
+- **Chaque modalité a ses émotions** : le texte reconnaît le mieux le dégoût (F1 dev 0,43 contre 0,27 pour la
+  vidéo), l'audio a sa meilleure émotion avec la tristesse (0,40).
+- **Les encodeurs gelés font l'essentiel du travail.** Pour l'audio, la meilleure couche de Whisper est celle
+  du milieu (16 sur 32) : les dernières couches se spécialisent dans la transcription et perdent le ton de la
+  voix.
+- **Pour la fusion, la méthode la plus simple gagne** : une moyenne simple dégrade la vidéo seule, mais des
+  poids choisis en validation croisée (vidéo 0,6, texte 0,2, audio 0,2) la dépassent. Avec 2 207 extraits
+  d'apprentissage, apprendre trois poids est plus sûr qu'apprendre des milliers de paramètres (fusion précoce,
+  attention multimodale), même à entrées égales.
+- **Test est plus difficile que dev** pour la vidéo et le texte : la fusion reste la meilleure sur test
+  (0,419), mais son gain sur la vidéo seule n'y est plus significatif.
+
+## Conclusion et limites
+
+Un protocole commun aux trois modalités (tous les choix en validation croisée par film sur train, dev pour
+mesurer, test une seule fois) donne des scores comparables et fiables. Le meilleur système fusionne les trois
+modalités par une moyenne pondérée : F1 macro 0,486 sur dev et 0,419 sur test.
+
+Limites : annotation surtout visuelle, qui avantage la vidéo ; peu de données (2 207 extraits
+d'apprentissage, 50 films en dev et en test) ; transcription non évaluée par un taux d'erreur sur les mots ;
+réglages choisis sur les mêmes prédictions hors pli, donc F1 cv légèrement optimiste. Pistes : des poids de
+fusion par émotion (plus de texte pour le dégoût), l'affinage d'un encodeur de parole, un grand modèle
+multimodal avec plus de mémoire graphique.
 
 ## Répartition du travail
 
