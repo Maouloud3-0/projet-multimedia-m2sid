@@ -1,5 +1,7 @@
 # Reconnaissance d'émotions dans des extraits de film — M2 SID, groupe 4
 
+**Groupe 4 — Gaoussou Maouloud KONTA, Hanchen LI**
+
 Projet Données multimédia 2026 : reconnaître la catégorie d'émotion (8 classes : amusement, anger, awe,
 contentment, disgust, excitement, fear, sadness) d'extraits de film du corpus
 [EmoVid](https://zane-zyqiu.github.io/EmoVid/) (section *movie* : 350 films, 3 088 extraits), à partir du
@@ -146,4 +148,4 @@ multimodal avec plus de mémoire graphique.
 | Partie | Auteur |
 |---|---|
 | Points 3, 4 texte et 4 vidéo | Hanchen LI |
-| Points 4 audio et 5 | Gaoussou |
+| Points 4 audio et 5 | Gaoussou Maouloud KONTA |

@@ -2,6 +2,8 @@
 
 **Projet Données multimédia — M2 SID, groupe 4 — novembre 2026**
 
+**Auteurs : Gaoussou Maouloud KONTA, Hanchen LI**
+
 ---
 
 ## Sommaire
