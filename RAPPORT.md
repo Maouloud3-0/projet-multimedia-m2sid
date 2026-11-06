@@ -1,3 +1,11 @@
+# EmoVid : reconnaissance d'émotions dans des extraits de film
+
+**Groupe 4 — Gaoussou Maouloud KONTA, Hanchen LI** · M2 SID, Université Toulouse III · Projet Données multimédia, novembre 2026
+
+**Dépôt du projet : https://gitlab.com/Maouloud3-0/projet-multimedia-m2sid**
+
+Version mise en page : [RAPPORT.pdf](RAPPORT.pdf)
+
 ## Résumé
 
 Ce projet reconnaît la catégorie d'émotion (huit classes) d'extraits de film du corpus EmoVid à partir de
@@ -1466,3 +1474,91 @@ Tableau : Glossaire
 | F1 macro | Moyenne des F1 des 8 émotions, chacune comptant autant |
 | Optuna | Outil qui cherche automatiquement de bons réglages en un nombre d'essais fixé |
 | IC 95 % par films | Intervalle obtenu en rééchantillonnant les films 2 000 fois |
+
+## Annexe F. Les têtes d'attention couche par couche
+
+Cette annexe détaille, couche par couche, les petits réseaux appris au-dessus des encodeurs gelés : la tête
+d'attention du N3 vidéo, celle du N3 audio et le modèle multimodal de l'option C. Pour chaque étape, on donne
+la forme des données qui entrent et qui sortent, et le nombre de paramètres appris. Les dimensions et les
+réglages sont ceux retenus par Optuna en validation croisée (`point4_video/resultats/scores_n3.csv`,
+`point4_audio/resultats/scores_n3.csv`, `point5_fusion/resultats/scores_attention.csv`) ; le code est dans
+`point4_video/06_video_n3.py`, `point4_audio/04_audio_n3.py` et `point5_fusion/03_fusion_attention.py`.
+Les encodeurs ne sont jamais modifiés et aucun décodeur n'est utilisé.
+
+Les trois réseaux suivent le même principe : (1) chaque morceau (image ou tranche de son) est projeté dans un
+espace plus petit ; (2) une couche donne une note à chaque morceau ; (3) un softmax transforme les notes en
+poids dont la somme vaut 1 ; (4) la moyenne pondérée des morceaux donne un seul vecteur ; (5) une dernière
+couche linéaire sort les 8 émotions. Il s'agit d'une mise en commun par attention, et non d'un Transformer
+complet : aucun bloc d'auto-attention n'est retenu.
+
+### F.1 N3 vidéo : tête d'attention sur 16 images (PE + visage)
+
+Tableau : N3 vidéo, encodeur PE avec les descripteurs de visage (dimension cachée 128)
+| Étape | Couche | Entrée → sortie | Paramètres appris |
+|---|---|---|---:|
+| 0 | Encodeurs gelés : PE (1 024) + visage ViT (777) par image, standardisés | 16 images → 16 × 1 801 | 0 |
+| 1 | Linéaire 1 801 → 128, GELU, dropout 0,53 (mêmes poids pour chaque image) | 16 × 1 801 → 16 × 128 | 230 656 |
+| 2 | Linéaire 128 → 1 : une note par image | 16 × 128 → 16 notes | 129 |
+| 3 | Softmax sur les images présentes (pendant l'apprentissage, 26 % des images retirées au hasard) | 16 notes → 16 poids, somme 1 | 0 |
+| 4 | Moyenne pondérée des 16 vecteurs | 16 × 128 → 128 | 0 |
+| 5 | Dropout 0,53, linéaire 128 → 8, softmax | 128 → 8 probabilités | 1 032 |
+| | **Total** | | **231 817** |
+
+La même tête sert aux autres encodeurs d'images ; seule la taille de l'entrée change. Pour SigLIP 2 (1 152 + 777 =
+1 929 valeurs par image, dimension cachée 256), elle compte 496 393 paramètres. Le système vidéo final garde
+les têtes d'attention de PE et de SigLIP 2. Apprentissage : AdamW, lr 3,0 × 10⁻⁴, weight decay 0,05,
+17 époques, perte pondérée par classe, lots de 64, moyenne de 3 graines.
+
+### F.2 N3 audio : tête d'attention sur 16 tranches de son
+
+Tableau : N3 audio, encodeur de Whisper large-v3 (dimension cachée 256)
+| Étape | Couche | Entrée → sortie | Paramètres appris |
+|---|---|---|---:|
+| 0 | Encodeur de Whisper gelé : moyenne des couches sur chacune des 16 tranches de même durée, standardisée | 16 tranches → 16 × 1 280 | 0 |
+| 1 | Linéaire 1 280 → 256, GELU, dropout 0,54 (mêmes poids pour chaque tranche) | 16 × 1 280 → 16 × 256 | 327 936 |
+| 2 | Linéaire 256 → 1 : une note par tranche | 16 × 256 → 16 notes | 257 |
+| 3 | Softmax (pendant l'apprentissage, 20 % des tranches retirées au hasard) | 16 notes → 16 poids, somme 1 | 0 |
+| 4 | Moyenne pondérée des 16 vecteurs | 16 × 256 → 256 | 0 |
+| 5 | Dropout 0,54, linéaire 256 → 8, softmax | 256 → 8 probabilités | 2 056 |
+| | **Total** | | **330 249** |
+
+Pour WavLM (1 024 valeurs par tranche, dimension cachée 256, 46 % des tranches retirées), la même tête compte
+264 713 paramètres. Ces deux têtes font partie des 4 modèles du système audio final. Apprentissage de la tête
+Whisper : AdamW, lr 1,2 × 10⁻⁴, weight decay 0,0097, 31 époques, moyenne de 3 graines.
+
+### F.3 Option C : le modèle multimodal à attention
+
+Tableau : Option C, couche par couche (dimension cachée 256)
+| Étape | Couche | Entrée → sortie | Paramètres appris |
+|---|---|---|---:|
+| 0 | Encodeurs gelés, standardisés : PE + visage (images), e5 + indicateur de dialogue (texte), encodeur de Whisper (son) | 16 × 1 801, 1 × 1 025, 16 × 1 280 | 0 |
+| 1a | Projection des images : linéaire 1 801 → 256, GELU, dropout 0,31 | 16 × 1 801 → 16 × 256 | 461 312 |
+| 1b | Projection du texte : linéaire 1 025 → 256, GELU, dropout 0,31 | 1 × 1 025 → 1 × 256 | 262 656 |
+| 1c | Projection du son : linéaire 1 280 → 256, GELU, dropout 0,31 | 16 × 1 280 → 16 × 256 | 327 936 |
+| 2 | Ajout d'un vecteur appris par modalité (étiquette « image », « texte » ou « son ») | 3 × 256 | 768 |
+| 3 | Mise en commun : les 33 vecteurs sont placés côte à côte | 33 × 256 | 0 |
+| 4 | Auto-attention (1 bloc Transformer, 4 têtes) : proposée à Optuna, **non retenue** | — | 0 (527 104 si retenue) |
+| 5 | Linéaire 256 → 1 : une note par morceau | 33 × 256 → 33 notes | 257 |
+| 6 | Un seul softmax sur les 33 notes (morceaux retirés au hasard : 19 % ; modalité entière retirée : 19 %) | 33 notes → 33 poids, somme 1 | 0 |
+| 7 | Moyenne pondérée des 33 vecteurs | 33 × 256 → 256 | 0 |
+| 8 | Dropout 0,31, linéaire 256 → 8, softmax | 256 → 8 probabilités | 2 056 |
+| | **Total** | | **1 054 985** |
+
+C'est à l'étape 6 que les trois modalités se rejoignent : le même softmax compare les 16 images, le texte et les
+16 tranches de son, et décide de la part de chacune dans le vecteur final. Sur dev, 95 % du poids va aux images,
+3 % au texte et 2 % au son. Apprentissage : AdamW, lr 1,5 × 10⁻⁴, weight decay 0,0025, 16 époques.
+
+### F.4 N3 texte : fine-tuning complet
+
+Le N3 du texte n'utilise pas de tête d'attention : l'encodeur entier est réentraîné (partie 6). Pour le
+meilleur modèle (ekman, RoBERTa-large, 24 couches de 1 024 valeurs, environ 355 millions de paramètres), le
+chemin est le suivant.
+
+Tableau : N3 texte, fine-tuning de RoBERTa-large (ekman)
+| Étape | Couche | Entrée → sortie | Paramètres appris |
+|---|---|---|---:|
+| 0 | Description et dialogue, découpés en jetons (256 au plus) | texte → 256 jetons | 0 |
+| 1 | Les 24 couches de l'encodeur, **toutes mises à jour** | 256 jetons → 256 × 1 024 | ≈ 355 M |
+| 2 | Vecteur du premier jeton, qui résume le texte | 256 × 1 024 → 1 024 | 0 |
+| 3 | Nouvelle tête : linéaire 1 024 → 1 024, tanh, dropout | 1 024 → 1 024 | 1 049 600 |
+| 4 | Linéaire 1 024 → 8, softmax | 1 024 → 8 probabilités | 8 200 |

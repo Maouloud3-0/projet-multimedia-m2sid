@@ -86,6 +86,10 @@ class Cover(Flowable):
             c.setFont('Sans-B',10);c.drawCentredString(x,yy+16,label)
         c.setFillColor(colors.HexColor(PAL['fusion']));c.circle(W-M-43,yy-92,8,fill=1,stroke=0)
         c.setFont('Sans-B',10);c.drawRightString(W-M,yy-119,'FUSION')
+        url='https://gitlab.com/Maouloud3-0/projet-multimedia-m2sid'
+        c.setFillColor(INK);c.setFont('Sans-B',10);c.drawString(M,196,'DÉPÔT DU PROJET')
+        c.setFillColor(colors.HexColor(PAL['fusion']));c.setFont('Sans',11);c.drawString(M,180,url)
+        c.linkURL(url,(M,176,M+c.stringWidth(url,'Sans',11),192),relative=1)
         c.setStrokeColor(colors.HexColor('#C9CFCE'));c.setLineWidth(.6);c.line(M,168,W-M,168)
         c.setFillColor(INK);c.setFont('Sans-B',12);c.drawString(M,143,'Groupe 4')
         c.setFont('Sans',12);c.drawString(M,122,'Gaoussou Maouloud KONTA');c.drawString(M,104,'Hanchen LI')

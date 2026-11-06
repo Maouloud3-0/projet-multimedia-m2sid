@@ -9,7 +9,7 @@ contentment, disgust, excitement, fear, sadness) d'extraits de film du corpus
 [EmoVid](https://zane-zyqiu.github.io/EmoVid/) (section *movie* : 350 films, 3 088 extraits), à partir du
 texte, de l'audio et de la vidéo, puis en fusionnant les trois.
 
-Le **rapport complet** est dans [RAPPORT.pdf](RAPPORT.pdf) (51 pages, 38 figures : schémas d'architecture,
+Le **rapport complet** est dans [RAPPORT.pdf](RAPPORT.pdf) (54 pages, 38 figures : schémas d'architecture,
 matrices de confusion, analyses) ; sa source lisible en ligne est [RAPPORT.md](RAPPORT.md). Chaque dossier a
 aussi son README détaillé.
 
