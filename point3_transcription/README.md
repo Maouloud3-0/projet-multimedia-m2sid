@@ -29,6 +29,16 @@ Le résultat, `resultats/corpus.csv`, réunit pour chaque extrait la partition,
 l'émotion, la description et le dialogue. C'est l'entrée de tous les modèles du point 4
 (le texte l'utilise pour le dialogue, la vidéo et l'audio pour les identifiants et la partition).
 
+## Schémas
+
+![Chaîne de transcription](../rapport/figures/schema_transcription.png)
+
+![Règles d'aiguillage](../rapport/figures/schema_routage.png)
+
+Les règles exactes (similarité des mots ≥ 0,90, longueurs à 15 % près, mêmes négations et mêmes nombres,
+parole confirmée par Silero ou YAMNet) et les raisons des 992 vérifications sont détaillées dans la
+partie 4 du [rapport](../RAPPORT.pdf).
+
 ## Les étapes
 
 | Script | Rôle | Sortie |

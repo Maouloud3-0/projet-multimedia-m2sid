@@ -111,6 +111,20 @@ se regardent entre eux) ; puis un score par morceau donne une moyenne pondérée
 prédit les 8 émotions. Pendant l'apprentissage, des morceaux et parfois une modalité entière sont retirés au
 hasard, pour que le modèle ne s'appuie pas que sur la vidéo. 30 essais Optuna en CV, puis 3 graines.
 
+![Architecture de l'option C](../rapport/figures/schema_option_c.png)
+
+En détail (partie 8.5 du rapport) :
+
+1. **Trois encodeurs gelés, aucun décodeur** : PE (*Perception Encoder Core L/14-336*, images, 1 024 valeurs
+   par image) + plus grand visage de l'image (YuNet et ViT FER2013, 777 valeurs) ; e5-large-v2 (description +
+   dialogue, 1 024 + 1) ; encodeur de Whisper large-v3 (moyenne des couches sur chacune des 16 tranches,
+   1 280).
+2. **Même taille pour tous** : une projection par modalité (linéaire → 256, GELU, dropout) + un « badge »
+   de modalité appris (256).
+3. **Point de rencontre** : un neurone note chacun des 33 morceaux, un softmax en fait 33 poids, la moyenne
+   pondérée donne un seul vecteur de 256 pour l'extrait.
+4. **Sortie** : dropout, 256 → 8, softmax. Environ 1,05 million de paramètres appris.
+
 | | F1 cv | F1 dev | Part d'attention sur dev (vidéo / texte / audio) |
 |---|---|---|---|
 | Attention multimodale | 0,439 | 0,450 | 95 % / 3 % / 2 % |

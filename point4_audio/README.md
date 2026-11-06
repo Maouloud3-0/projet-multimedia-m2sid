@@ -54,10 +54,18 @@ et dérivées, chroma, contraste spectral, centroïde, largeur de bande, rolloff
 passages par zéro, attaques ; moyenne et écart-type), plus le tempo : 221 caractéristiques.
 Régression logistique, `C = 0.003`, classes équilibrées. F1 cv 0,212, dev 0,224.
 
+Ce qui compte (importance par permutation de chaque famille en CV, voir la partie 5.2 du rapport) :
+l'**intensité perçue** (volume, variations, pics d'intensité par seconde) est la famille la plus utile,
+devant les MFCC, leurs dérivées et le contraste spectral ; la hauteur de la voix n'apporte presque rien,
+la voix étant souvent couverte par la musique et les bruitages.
+
 ## Étape 2 — N2 : encodeurs gelés
 
 [02_encodeurs.py](02_encodeurs.py) transforme le son en vecteurs, sans utiliser les étiquettes ni
-modifier les encodeurs. Pour chaque couche, on garde la moyenne et l'écart-type dans le temps.
+modifier les encodeurs. On n'utilise que la **partie encodeur** de chaque modèle : le décodeur de Whisper
+(qui écrit le texte) n'est pas utilisé, WavLM et wav2vec2 sont chargés sans leur tête, CLAP sans sa branche
+texte. Chaque extrait traverse l'encodeur une seule fois ; pour chaque couche, on garde la moyenne et
+l'écart-type dans le temps des vecteurs qu'elle produit.
 
 | Encodeur | Modèle | Ce qu'il représente |
 |---|---|---|

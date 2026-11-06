@@ -1,0 +1,8 @@
+reportlab>=4
+pypdf>=5
+pypdfium2>=4
+pillow>=10
+numpy>=1.26
+pandas>=2
+matplotlib>=3.9
+scikit-learn>=1.5

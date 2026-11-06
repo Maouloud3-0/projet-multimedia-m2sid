@@ -22,6 +22,17 @@
   mesurer, test n'est pas utilisé.
 - Les probabilités du système final sont dans `resultats/probas_texte.npz`.
 
+## Schémas
+
+![N1 : TF-IDF](../rapport/figures/schema_tfidf.png)
+
+![N2 : encodeur de phrases gelé](../rapport/figures/schema_n2_texte.png)
+
+![N3 : fine-tuning](../rapport/figures/schema_n3_texte.png)
+
+La partie 6 du [rapport](../RAPPORT.pdf) détaille chaque niveau (TF-IDF, encodeurs, déroulé du fine-tuning),
+les mots que le TF-IDF associe à chaque émotion et les matrices de confusion.
+
 ## Les données
 
 Entrée : [point3_transcription/resultats/corpus.csv](../point3_transcription/resultats/corpus.csv),

@@ -25,6 +25,16 @@
   d'attention, sans modifier les poids des encodeurs d'images.
 - Les probabilités finales sont dans `resultats/probas_video.npz`.
 
+## Schémas
+
+![N2 : encodeur d'images gelé et visages](../rapport/figures/schema_n2_video.png)
+
+![Visages](../rapport/figures/schema_visages.png)
+
+La tête d'attention du N3 est la même que celle de l'audio (schéma `rapport/figures/schema_n3_attention.png`).
+La partie 7 du [rapport](../RAPPORT.pdf) détaille l'extraction des images, l'importance des descripteurs du
+N1, les sept encodeurs, les visages et les matrices de confusion.
+
 ## Les données
 
 Entrées : les vidéos de `movie/video/` et

@@ -2,12 +2,15 @@
 
 **Groupe 4 — Gaoussou Maouloud KONTA, Hanchen LI**
 
+Dépôt : https://gitlab.com/Maouloud3-0/projet-multimedia-m2sid
+
 Projet Données multimédia 2026 : reconnaître la catégorie d'émotion (8 classes : amusement, anger, awe,
 contentment, disgust, excitement, fear, sadness) d'extraits de film du corpus
 [EmoVid](https://zane-zyqiu.github.io/EmoVid/) (section *movie* : 350 films, 3 088 extraits), à partir du
 texte, de l'audio et de la vidéo, puis en fusionnant les trois.
 
-Le rapport complet (données, méthodes, analyse, limites) est dans [RAPPORT.md](RAPPORT.md) ; chaque dossier a
+Le **rapport complet** est dans [RAPPORT.pdf](RAPPORT.pdf) (51 pages, 38 figures : schémas d'architecture,
+matrices de confusion, analyses) ; sa source lisible en ligne est [RAPPORT.md](RAPPORT.md). Chaque dossier a
 aussi son README détaillé.
 
 ## Résultats
@@ -35,6 +38,7 @@ images. La fusion gagne 2,5 points sur dev (significatif) et 0,6 point sur test 
 | [point4_audio/](point4_audio/) | 4. Modèle audio | eGeMAPS, encodeurs gelés (Whisper, WavLM…), attention, combinaison |
 | [point4_video/](point4_video/) | 4. Modèle vidéo | Images, encodeurs gelés, visages, attention, combinaison |
 | [point5_fusion/](point5_fusion/) | 5. Fusion | Fusion tardive, fusion précoce, modèle multimodal à attention, système final |
+| [rapport/](rapport/) | rapport | Figures, schémas et génération du PDF à partir des résultats versionnés |
 
 Chaque dossier a son README : ce qui a été essayé, les scores, comment relancer.
 
@@ -113,6 +117,10 @@ Python 3.11, une carte graphique pour les encodeurs (8 Go suffisent). Les points
 Ordre : point 3 (ou directement son `corpus.csv` versionné), puis les trois modules du point 4 dans
 n'importe quel ordre (la vidéo d'abord si l'on relance aussi l'audio, qui réutilise `point4_video/resultats/fin_pub.csv`),
 puis le point 5. Les commandes sont dans le README de chaque dossier.
+
+Le rapport se régénère depuis `rapport/` : `dessiner_figures.py` (figures et schémas), `construire_rapport.py`
+(mise en page du PDF à partir de `RAPPORT.md`) et `verifier_resultats.py` (contrôle des scores) ; voir
+[rapport/README.md](rapport/README.md).
 
 ## Analyse des résultats
 
